@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fastlane Transport</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>FASTLANE TRANSPORT SERVICES</h1>
+</header>
+
+<section class="hero">
+  <h2>Luxury • Comfort • Reliable</h2>
+</section>
+
+<section class="booking">
+
+<form id="bookingForm">
+
+<input id="name" placeholder="Name" required>
+<input id="phone" placeholder="Phone" required>
+<input id="pickup" placeholder="Pickup">
+<input id="dropoff" placeholder="Drop-off">
+<input id="date" type="date">
+
+<select id="vehicle">
+<option>Hiace</option>
+<option>Mark X</option>
+</select>
+
+<select id="payment">
+<option>Airtel</option>
+<option>MTN</option>
+<option>Bank</option>
+</select>
+
+<input id="transactionId" placeholder="Transaction ID">
+
+<button type="submit">Book Now</button>
+
+</form>
+
+<a href="https://wa.me/256775607625" target="_blank">
+<button>WhatsApp Booking</button>
+</a>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
