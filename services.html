@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Services - Fastlane</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* HEADER */
+.header-services {
+    background: linear-gradient(90deg, black, gold);
+    padding: 50px;
+    text-align: center;
+}
+
+/* NAV INSIDE PAGE */
+.service-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #111;
+    padding: 15px;
+}
+
+.service-nav a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTION STYLE */
+.service-section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* COLORS PER SECTION */
+.airport { border-left: 5px solid gold; }
+.corporate { border-left: 5px solid orange; }
+.group { border-left: 5px solid teal; }
+.tours { border-left: 5px solid lightgreen; }
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>FASTLANE</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="header-services">
+    <h1>Our Services</h1>
+    <p>Explore our services in detail</p>
+</header>
+
+<!-- CLICK NAVIGATION -->
+<div class="service-nav">
+    <a href="#airport">Airport Transfers</a>
+    <a href="#corporate">Corporate Travel</a>
+    <a href="#group">Group Transport</a>
+    <a href="#tours">City Tours</a>
+</div>
+
+<!-- AIRPORT -->
+<section id="airport" class="service-section airport fade">
+<h2>🚗 Airport Transfers</h2>
+<p>
+At Fastlane Transport Services, our airport transfer service is designed to provide a seamless, reliable, and stress-free travel experience...
+</p>
+<p>
+We understand that timing is critical when it comes to flights...
+</p>
+<p>
+Our vehicles are clean, spacious, and well-maintained...
+</p>
+</section>
+
+<!-- CORPORATE -->
+<section id="corporate" class="service-section corporate fade">
+<h2>👔 Corporate Travel</h2>
+<p>
+Our corporate transport services are tailored for professionals...
+</p>
+<p>
+We prioritize punctuality, professionalism, and comfort...
+</p>
+<p>
+Fastlane helps businesses maintain a strong professional image...
+</p>
+</section>
+
+<!-- GROUP -->
+<section id="group" class="service-section group fade">
+<h2>👨‍👩‍👧 Group Transport</h2>
+<p>
+Group travel requires coordination and comfort...
+</p>
+<p>
+Our spacious vans are perfect for events, families...
+</p>
+<p>
+We ensure safe and convenient group journeys...
+</p>
+</section>
+
+<!-- TOURS -->
+<section id="tours" class="service-section tours fade">
+<h2>📍 City Tours</h2>
+<p>
+Discover the city with our flexible and comfortable transport services...
+</p>
+<p>
+Our drivers help you explore top destinations...
+</p>
+<p>
+We make every trip enjoyable and memorable...
+</p>
+</section>
+
+<footer>
+📞 +256 775 607625 | +256 745 185914
+</footer>
+
+<script>
+
+/* ANIMATION */
+const sections = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            sec.classList.add('show');
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
