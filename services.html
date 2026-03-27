@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services - Fastlane Transport</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2>FASTLANE</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="header-services">
+    <h1>Our Services</h1>
+    <p>Professional transport solutions designed for comfort, reliability, and excellence</p>
+</header>
+
+<!-- INTERNAL NAV -->
+<div class="service-nav">
+    <a href="#airport">Airport Transfers</a>
+    <a href="#corporate">Corporate Travel</a>
+    <a href="#group">Group Transport</a>
+    <a href="#tours">City Tours</a>
+</div>
+
+<!-- AIRPORT -->
+<section id="airport" class="service-section fade">
+    <h2>🚗 Airport Transfers</h2>
+    <img src="https://images.unsplash.com/photo-1589395937772-f670ae0a7d8d" class="service-img">
+
+    <p>
+    Our airport transfer service is designed to provide a seamless and stress-free travel experience...
+    </p>
+    <p>
+    We ensure timely pickups and drop-offs while monitoring flight schedules to adjust accordingly.
+    </p>
+    <p>
+    Travel in comfort with our clean, spacious, and well-maintained vehicles.
+    </p>
+</section>
+
+<!-- CORPORATE -->
+<section id="corporate" class="service-section fade">
+    <h2>👔 Corporate Travel</h2>
+    <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b" class="service-img">
+
+    <p>
+    Our corporate transport services are tailored for professionals who value punctuality and comfort.
+    </p>
+    <p>
+    We provide reliable and professional transport for meetings, events, and executive travel.
+    </p>
+    <p>
+    Maintain your business image with our premium service.
+    </p>
+</section>
+
+<!-- GROUP -->
+<section id="group" class="service-section fade">
+    <h2>👨‍👩‍👧 Group Transport</h2>
+    <img src="https://images.unsplash.com/photo-1597002138433-1b3d4b6b2d5b" class="service-img">
+
+    <p>
+    Perfect for families, teams, and events, our group transport ensures everyone travels together comfortably.
+    </p>
+    <p>
+    Our spacious vehicles provide convenience, safety, and cost efficiency.
+    </p>
+</section>
+
+<!-- TOURS -->
+<section id="tours" class="service-section fade">
+    <h2>📍 City Tours</h2>
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="service-img">
+
+    <p>
+    Discover the city in comfort with our flexible and enjoyable city tour services.
+    </p>
+    <p>
+    We guide you to top destinations while ensuring a memorable experience.
+    </p>
+</section>
+
+<footer>
+    📞 +256 775 607625 | +256 745 185914
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
