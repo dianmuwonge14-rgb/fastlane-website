@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Services - Fastlane</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* HEADER COLOR */
+.header-services {
+    background: linear-gradient(90deg, black, gold);
+    padding: 40px;
+    text-align: center;
+}
+
+.header-services h1 {
+    color: white;
+}
+
+/* SERVICE BOX */
+.service-box {
+    background: rgba(255,255,255,0.05);
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.service-box:hover {
+    background: rgba(255,215,0,0.2);
+    transform: scale(1.02);
+}
+
+/* HIDDEN CONTENT */
+.service-content {
+    display: none;
+    margin-top: 15px;
+    color: #ddd;
+}
+
+/* ACTIVE */
+.service-box.active .service-content {
+    display: block;
+}
+
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>FASTLANE</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="header-services">
+    <h1>Our Services</h1>
+    <p>Click any service below to explore more</p>
+</header>
+
+<section class="section">
+
+<div class="service-box fade-in" onclick="toggleService(this)">
+    <h2>🚗 Airport Transfers</h2>
+    <div class="service-content">
+        <p>We provide reliable airport pickups and drop-offs with professional drivers.</p>
+        <p>Our service ensures punctuality, comfort, and peace of mind for every traveler.</p>
+        <p>We monitor flights and adjust timing to guarantee a smooth experience.</p>
+    </div>
+</div>
+
+<div class="service-box fade-in" onclick="toggleService(this)">
+    <h2>👔 Corporate Travel</h2>
+    <div class="service-content">
+        <p>Professional transport for business executives and corporate clients.</p>
+        <p>We ensure punctual arrivals and a premium travel experience.</p>
+        <p>Perfect for meetings, events, and daily business transport needs.</p>
+    </div>
+</div>
+
+<div class="service-box fade-in" onclick="toggleService(this)">
+    <h2>👨‍👩‍👧 Group Transport</h2>
+    <div class="service-content">
+        <p>Spacious vehicles for families, teams, and organizations.</p>
+        <p>Travel together comfortably and safely without needing multiple cars.</p>
+        <p>Ideal for events, trips, and special occasions.</p>
+    </div>
+</div>
+
+<div class="service-box fade-in" onclick="toggleService(this)">
+    <h2>📍 City Tours</h2>
+    <div class="service-content">
+        <p>Explore the city with comfort and flexibility.</p>
+        <p>Discover top locations and hidden gems with our drivers.</p>
+        <p>Enjoy a memorable travel experience tailored to your needs.</p>
+    </div>
+</div>
+
+</section>
+
+<footer>
+    📞 +256 775 607625 | +256 745 185914
+</footer>
+
+<script>
+
+/* CLICK EXPAND */
+function toggleService(element) {
+    element.classList.toggle("active");
+}
+
+/* SCROLL ANIMATION */
+const faders = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            el.classList.add('show');
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
