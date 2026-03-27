@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fastlane Transport Services</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 90px;
+}
+
+/* TITLE */
+h1 {
+    margin: 10px 0;
+}
+
+h2 {
+    text-align: center;
+    color: gold;
+}
+
+/* FLEET */
+.fleet {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
+}
+
+.card {
+    width: 260px;
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    text-align: center;
+}
+
+.card p {
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.button {
+    display: block;
+    margin: 30px auto;
+    width: 220px;
+    text-align: center;
+    padding: 12px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: orange;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: gold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="./logo.png" alt="Logo">
+    <h1>Fastlane Transport Services</h1>
+</header>
+
+<h2>Our Fleet</h2>
+
+<section class="fleet">
+
+    <div class="card">
+        <img src="./images/car1.jpg" alt="Toyota Hiace">
+        <h3>Toyota Hiace</h3>
+        <p>Spacious & Comfortable</p>
+    </div>
+
+    <div class="card">
+        <img src="./images/car2.jpg" alt="Toyota Mark X">
+        <h3>Toyota Mark X</h3>
+        <p>Luxury & Style</p>
+    </div>
+
+    <div class="card">
+        <img src="./images/car3.jpg" alt="Executive Sedan">
+        <h3>Executive Sedan</h3>
+        <p>Premium Comfort</p>
+    </div>
+
+    <div class="card">
+        <img src="./images/car4.jpg" alt="Tour Van">
+        <h3>Tour Van</h3>
+        <p>Perfect for Groups</p>
+    </div>
+
+</section>
+
+<!-- WHATSAPP BUTTON -->
+<a class="button" href="https://wa.me/256775607625" target="_blank">
+    📲 Book via WhatsApp
+</a>
+
+<footer>
+    📞 +256 775 607625 | +256 745 185914
+</footer>
+
+</body>
+</html>
