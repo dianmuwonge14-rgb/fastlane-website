@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(black, #001f3f);
+  color: white;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(black, gold);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #000;
+}
+
+nav a {
+  color: gold;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #001f3f;
+  color: white;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h2 {
+  font-size: 24px;
+}
+
+.hero p {
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: orange;
+}
+
+/* GENERAL SECTIONS */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+/* SERVICES LIST */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 8px 0;
+}
+
+/* SLIDER */
+.slider {
+  width: 90%;
+  max-width: 700px;
+  margin: 30px auto;
+  position: relative;
+}
+
+/* IMAGES */
+.slide {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain; /* shows full image */
+  display: none;
+  border-radius: 10px;
+  background: black;
+}
+
+/* ACTIVE SLIDE */
+.active {
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  margin-top: 20px;
+}
