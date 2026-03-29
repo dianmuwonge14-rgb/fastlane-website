@@ -33,21 +33,23 @@ nav {
     align-items: center;
 }
 
+/* NAV LINKS */
 .nav-link {
     color: #fff;
     text-decoration: none;
     position: relative;
+    padding-bottom: 5px;
 }
 
-/* RED LINE */
+/* 🔴 RED LINE (TOP NAV) */
 .nav-link::after {
     content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 0%;
     height: 2px;
     background: red;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
     transition: 0.3s;
 }
 
@@ -56,31 +58,34 @@ nav {
 }
 
 /* ===============================
-   🔥 MEGA MENU (RESTORED)
+   MEGA MENU (FIXED PROPERLY)
 ================================ */
 .menu-item {
     position: relative;
 }
 
+/* DROPDOWN */
 .mega-menu {
     position: absolute;
     top: 100%;
     left: 0;
     background: #111827;
-    padding: 30px 40px;
+    padding: 25px 40px;
     display: none;
-    min-width: 600px;
     border-radius: 8px;
+    min-width: 650px;
 }
 
+/* SHOW */
 .menu-item:hover .mega-menu {
     display: block;
 }
 
-/* CONTAINER */
+/* GRID FIX (THIS WAS THE ISSUE) */
 .mega-container {
-    display: flex;
-    gap: 80px; /* 🔥 spacing restored */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
 }
 
 /* COLUMN */
@@ -89,6 +94,7 @@ nav {
     flex-direction: column;
 }
 
+/* TITLES */
 .column h4 {
     color: gold;
     margin-bottom: 12px;
@@ -101,16 +107,16 @@ nav {
     text-decoration: none;
     margin-bottom: 8px;
     position: relative;
-    width: fit-content;
+    display: inline-block;
 }
 
-/* RED LINE UNDER LINKS */
+/* 🔴 RED LINE (DROPDOWN ITEMS) */
 .column a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 60%;
+    width: 100%;
     height: 2px;
     background: red;
     transform: scaleX(0);
@@ -174,11 +180,12 @@ nav {
     border-radius: 50%;
 }
 
+/* ICON COLOR */
 .icons a i {
     color: #fff;
 }
 
-/* 🔥 TIKTOK */
+/* TIKTOK */
 .tiktok {
     background: #000;
     box-shadow: -3px 0 12px #00f2ea, 3px 0 12px #ff0050;
