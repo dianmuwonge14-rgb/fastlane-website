@@ -1,286 +1,190 @@
-/* RESET */
+/* ===============================
+   RESET
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* BODY */
-body {
     font-family: Arial, sans-serif;
-    background: #0b0f19;
-    color: white;
 }
 
-/* HEADER */
-.header {
+/* ===============================
+   BODY
+================================ */
+body {
+    background-color: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+    background-color: #000;
+    padding: 15px 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 40px;
+    align-items: center;
 }
 
-/* LOGO */
-.logo {
+header img {
+    height: 45px;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
     color: gold;
-    font-weight: bold;
-    font-size: 20px;
 }
 
-/* NAV */
-nav {
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+    height: 80vh;
+    background: url("images/airport.jpg") center/cover no-repeat;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 42px;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 15px 30px;
+    border-radius: 6px;
+}
+
+/* ===============================
+   SERVICES
+================================ */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.service-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
+}
+
+.service {
+    background: #fff;
+    padding: 18px;
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.service h3 {
+    margin-top: 12px;
+}
+
+/* ===============================
+   CARS SECTION (FIXED UNDERLINE)
+================================ */
+.cars-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cars-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* List container */
+.car-list {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 18px;
 }
 
-/* NAV LINKS */
-.nav-link {
-    color: white;
-    text-decoration: none;
+/* Each car item */
+.car-item {
+    display: inline-block;
     position: relative;
-    font-size: 14px;
+    font-size: 18px;
+    padding-bottom: 6px;
+    cursor: pointer;
 }
 
-/* RED LINE */
-.nav-link::after {
+/* PERFECTLY SIZED RED LINE */
+.car-item::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;   /* controls length */
     height: 2px;
-    background: red;
+    background-color: red;
     transition: 0.3s;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+/* Hover effect */
+.car-item:hover::after {
+    width: 75%;
 }
 
-/* MENU ITEM */
-.menu-item {
-    position: relative;
+/* ===============================
+   ABOUT
+================================ */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
 }
 
-/* HOVER BRIDGE */
-.menu-item::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 20px;
+/* ===============================
+   CONTACT
+================================ */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-/* MEGA MENU */
-.mega-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    background: #111827;
-    display: none;
-    padding: 40px 0;
-}
-
-.menu-item:hover .mega-menu {
-    display: block;
-}
-
-/* CONTAINER */
-.mega-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* COLUMNS */
-.column {
-    width: 30%;
-}
-
-/* HEADINGS */
-.column h4 {
-    margin-bottom: 15px;
+.contact p {
+    margin: 10px 0;
     font-size: 16px;
-    font-weight: bold;
-    background: linear-gradient(90deg, gold, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-/* 🔥 FORCE VERTICAL LIST */
-.column a {
-    display: block !important;
-    width: 100%;
-    margin: 8px 0;
-    color: #ccc;
-    text-decoration: none;
-    position: relative;
-}
-
-/* RED LINE FOR DROPDOWN */
-.column a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background: red;
-    transition: 0.3s;
-}
-
-.column a:hover {
-    color: white;
-}
-
-.column a:hover::after {
-    width: 100%;
-}
-
-/* CONTACT */
-.top-contact {
-    text-align: right;
-    font-size: 13px;
-}
-
-.icons a {
-    color: white;
-    margin-left: 10px;
-}
-
-.icons a:hover {
-    color: gold;
-}
-
-/* HERO */
-.hero {
-    padding: 100px 40px;
-}/* NAV LINKS */
-.nav-link {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    font-size: 14px;
-}
-
-/* RED LINE */
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background: red;
-    transition: 0.3s;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* MENU ITEM */
-.menu-item {
-    position: relative;
-}
-
-/* HOVER BRIDGE */
-.menu-item::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 20px;
-}
-
-/* MEGA MENU */
-.mega-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    background: #111827;
-    display: none;
-    padding: 40px 0;
-}
-
-.menu-item:hover .mega-menu {
-    display: block;
-}
-
-/* CONTAINER */
-.mega-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* COLUMNS */
-.column {
-    width: 30%;
-}
-
-/* HEADINGS */
-.column h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    background: linear-gradient(90deg, gold, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* 🔥 FIX: FORCE VERTICAL LIST */
-.column a {
-    display: block;          /* 🔥 THIS FIXES IT */
-    margin: 8px 0;
-    color: #ccc;
-    text-decoration: none;
-    position: relative;
-}
-
-/* RED LINE FOR DROPDOWN */
-.column a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background: red;
-    transition: 0.3s;
-}
-
-.column a:hover {
-    color: white;
-}
-
-.column a:hover::after {
-    width: 100%;
-}
-
-/* CONTACT */
-.top-contact {
-    text-align: right;
-    font-size: 13px;
-}
-
-.icons a {
-    color: white;
-    margin-left: 10px;
-}
-
-.icons a:hover {
-    color: gold;
-}
-
-/* HERO */
-.hero {
-    padding: 100px 40px;
+/* ===============================
+   FOOTER
+================================ */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    margin-top: 20px;
 }
