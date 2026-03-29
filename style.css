@@ -58,7 +58,7 @@ nav {
 }
 
 /* ===============================
-   🔥 MEGA MENU (FINAL PERFECT FIX)
+   🔥 MEGA MENU (PERFECT FIX)
 ================================ */
 .menu-item {
     position: relative;
@@ -68,12 +68,13 @@ nav {
 .mega-menu {
     position: absolute;
     top: 100%;
-    left: 0; /* 🔥 FIX: align left to prevent cut */
+    left: 50%;
+    transform: translateX(-40%); /* 🔥 ADJUSTED (NOT FULL CENTER) */
     background: #111827;
-    padding: 30px 40px;
+    padding: 30px 50px;
     display: none;
     border-radius: 10px;
-    min-width: 650px;
+    min-width: 700px;
 }
 
 /* SHOW */
@@ -84,7 +85,7 @@ nav {
 /* CONTAINER */
 .mega-container {
     display: flex;
-    gap: 70px;
+    gap: 80px;
 }
 
 /* COLUMN */
@@ -109,13 +110,13 @@ nav {
     display: inline-block;
 }
 
-/* 🔴 FIXED RED LINE (NORMAL SIZE) */
+/* 🔴 PERFECT RED LINE */
 .column a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 40%; /* 🔥 FIXED LENGTH */
+    width: 50px; /* 🔥 FIXED LENGTH */
     height: 2px;
     background: red;
     transform: scaleX(0);
