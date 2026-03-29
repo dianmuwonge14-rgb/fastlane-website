@@ -39,19 +39,21 @@ body {
 nav {
     display: flex;
     gap: 25px;
-    align-items: center;
+    align-items: center; /* 🔥 ENSURES PERFECT ALIGNMENT */
 }
 
-/* TOP NAV LINKS */
-.nav-link {
+/* ALL NAV ITEMS SAME LEVEL */
+.nav-link,
+.menu-item > .nav-link {
     color: #fff;
     text-decoration: none;
     font-size: 15px;
     position: relative;
-    padding-bottom: 5px;
+    padding: 5px 0;
+    display: inline-block;
 }
 
-/* RED LINE FOR TOP NAV */
+/* RED LINE TOP NAV */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -68,11 +70,12 @@ nav {
 }
 
 /* ===============================
-   MENU ITEM
+   MENU ITEM (FIXED ALIGNMENT)
 ================================ */
 .menu-item {
     position: relative;
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center; /* 🔥 THIS FIXES "Cars" POSITION */
 }
 
 /* ===============================
@@ -103,7 +106,7 @@ nav {
 /* COLUMN */
 .column {
     display: flex;
-    flex-direction: column;   /* 🔥 STACK ITEMS VERTICALLY */
+    flex-direction: column;
 }
 
 /* COLUMN TITLE */
@@ -113,10 +116,10 @@ nav {
 }
 
 /* ===============================
-   DROPDOWN LINKS (FIXED)
+   DROPDOWN LINKS
 ================================ */
 .column a {
-    display: block;   /* 🔥 THIS FIXES INLINE ISSUE */
+    display: block;
     color: #ccc;
     text-decoration: none;
     margin-bottom: 8px;
@@ -126,7 +129,7 @@ nav {
     width: fit-content;
 }
 
-/* SMALL RED LINE */
+/* RED LINE */
 .column a::after {
     content: "";
     position: absolute;
