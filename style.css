@@ -41,7 +41,7 @@ nav {
     padding-bottom: 5px;
 }
 
-/* 🔴 RED LINE (TOP NAV) */
+/* RED LINE (TOP NAV) */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -58,22 +58,23 @@ nav {
 }
 
 /* ===============================
-   MEGA MENU (FIXED PROPERLY)
+   🔥 MEGA MENU (FINAL FIX)
 ================================ */
 .menu-item {
     position: relative;
 }
 
-/* DROPDOWN */
+/* BIG DROPDOWN */
 .mega-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%); /* 🔥 CENTER FIX */
     background: #111827;
-    padding: 25px 40px;
+    padding: 30px 50px;
     display: none;
-    border-radius: 8px;
-    min-width: 650px;
+    border-radius: 10px;
+    width: 700px; /* 🔥 FULL WIDTH */
 }
 
 /* SHOW */
@@ -81,17 +82,17 @@ nav {
     display: block;
 }
 
-/* GRID FIX (THIS WAS THE ISSUE) */
+/* CONTAINER */
 .mega-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* COLUMN */
 .column {
     display: flex;
     flex-direction: column;
+    min-width: 150px;
 }
 
 /* TITLES */
@@ -110,7 +111,7 @@ nav {
     display: inline-block;
 }
 
-/* 🔴 RED LINE (DROPDOWN ITEMS) */
+/* 🔴 RED LINE (VISIBLE + CLEAN) */
 .column a::after {
     content: "";
     position: absolute;
@@ -180,7 +181,6 @@ nav {
     border-radius: 50%;
 }
 
-/* ICON COLOR */
 .icons a i {
     color: #fff;
 }
@@ -202,9 +202,7 @@ nav {
     transform: translateY(-4px) scale(1.1);
 }
 
-/* ===============================
-   FLOATING BUTTONS
-================================ */
+/* FLOATING */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
@@ -220,9 +218,7 @@ nav {
     justify-content: center;
 }
 
-/* ===============================
-   HERO
-================================ */
+/* HERO */
 .hero {
     height: 80vh;
     background: url("images/airport.jpg") center/cover no-repeat;
