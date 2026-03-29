@@ -34,10 +34,6 @@ header img {
 /* ===============================
    NAVIGATION
 ================================ */
-nav {
-    position: relative;
-}
-
 nav ul {
     list-style: none;
     display: flex;
@@ -50,13 +46,12 @@ nav ul li {
 
 nav ul li a {
     color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 5px 0;
+    text-decoration: none !important;
+    border: none !important;
 }
 
 /* ===============================
-   DROPDOWN MENU
+   DROPDOWN
 ================================ */
 .dropdown {
     display: none;
@@ -65,64 +60,42 @@ nav ul li a {
     left: 0;
     background: #111827;
     padding: 20px;
-    min-width: 300px;
 }
 
-/* SHOW DROPDOWN */
 nav ul li:hover .dropdown {
     display: block;
 }
 
-/* DROPDOWN CONTENT */
-.dropdown div {
-    margin-bottom: 15px;
+/* ===============================
+   🔥 FORCE REMOVE ANY RED LINE
+================================ */
+.dropdown * {
+    border-bottom: none !important;
+    border: none !important;
 }
 
-.dropdown h4 {
-    color: gold;
-    margin-bottom: 10px;
-}
-
-/* LINKS INSIDE DROPDOWN */
-.dropdown a {
-    display: inline-block; /* IMPORTANT FIX */
-    color: #ccc;
-    text-decoration: none;
-    margin-bottom: 8px;
-    position: relative;
-    padding-bottom: 4px;
-}
-
-/* REMOVE ANY OLD FULL WIDTH LINES */
-.dropdown a::before {
+/* REMOVE ALL PSEUDO LINES */
+.dropdown *::before,
+.dropdown *::after {
+    content: none !important;
     display: none !important;
 }
 
-/* FIXED RED LINE (SHORT & CLEAN) */
-.dropdown a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40%;   /* SHORT LINE */
-    height: 2px;
-    background: red;
-    opacity: 0;
-    transition: 0.3s;
+/* ===============================
+   CLEAN LINKS
+================================ */
+.dropdown a {
+    display: block;
+    color: #ccc;
+    margin-bottom: 8px;
 }
 
-/* SHOW LINE ONLY ON HOVER */
-.dropdown a:hover::after {
-    opacity: 1;
-}
-
-/* HOVER TEXT */
 .dropdown a:hover {
     color: #fff;
 }
 
 /* ===============================
-   HERO SECTION
+   HERO
 ================================ */
 .hero {
     height: 80vh;
