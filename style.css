@@ -1,40 +1,86 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b0f19;
-    color: white;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastlane Transport</title>
 
-/* HEADER */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    position: relative;
-}
+    <link rel="stylesheet" href="style.css">
 
-/* LOGO */
-.logo {
-    color: gold;
-    font-weight: bold;
-}
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-/* NAV */
-nav {
-    display: flex;
-    gap: 20px;
-}
+<body>
 
-/* LINKS */
-nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    padding: 5px 0;
-}
+<header class="header">
 
-/* RED LINE */
+    <div class="logo">FASTLANE</div>
+
+    <nav>
+
+        <!-- CARS -->
+        <div class="menu-item">
+            <a href="#">Cars</a>
+
+            <!-- MEGA MENU -->
+            <div class="mega-menu">
+
+                <div class="mega-container">
+
+                    <div class="column">
+                        <h4>Categories</h4>
+                        <p>Luxury</p>
+                        <p>Sports cars</p>
+                        <p>Muscle car</p>
+                        <p>Retro cars</p>
+                        <p>VIP</p>
+                    </div>
+
+                    <div class="column">
+                        <h4>Body types</h4>
+                        <p>Sedans</p>
+                        <p>Coupes</p>
+                        <p>SUV</p>
+                        <p>Convertibles</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <a href="#">Brands</a>
+        <a href="#">Additional services</a>
+        <a href="#">Mobile App</a>
+        <a href="#">Club</a>
+        <a href="#">Blog</a>
+        <a href="#">Rent terms</a>
+        <a href="#">FAQ</a>
+        <a href="#">About us</a>
+        <a href="#">Contacts</a>
+
+    </nav>
+
+    <div class="top-contact">
+        <span>+256 775 607625</span>
+        <div class="icons">
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="https://wa.me/256775607625"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+</header>
+
+<section class="hero">
+    <h1>Rent a Car in Uganda</h1>
+</section>
+
+</body>
+</html>/* RED LINE */
 nav a::after {
     content: "";
     position: absolute;
