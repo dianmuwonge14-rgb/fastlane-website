@@ -95,6 +95,139 @@ nav {
     margin-bottom: 10px;
 }
 
+/* CONTACT SECTION */
+.top-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* 🔥 PHONE ROW (BIG + BALANCED) */
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;   /* BIG */
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* PHONE ICON */
+.contact-row i {
+    font-size: 20px;
+    color: #25D366;
+}
+
+/* ICONS */
+.icons {
+    display: flex;
+    gap: 12px;
+}
+
+/* ICON STYLE */
+.icons a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.icons a i {
+    color: #fff !important;
+}
+
+/* COLORS */
+.icons a:nth-child(1) { background: #0088cc; }
+.icons a:nth-child(2) { background: #25D366; }
+.icons a:nth-child(3) { background: #1877F2; }
+.icons a:nth-child(4) { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.icons a:nth-child(5) { background: #FF0000; }
+
+/* HOVER */
+.icons a:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: url("images/airport.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 30px;
+}.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* RED LINE */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* MENU */
+.menu-item {
+    position: relative;
+    display: inline-block;
+}
+
+/* DROPDOWN */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111827;
+    padding: 25px;
+    display: none;
+    min-width: 550px;
+    border-radius: 6px;
+}
+
+.menu-item:hover .mega-menu {
+    display: block;
+}
+
+.mega-container {
+    display: flex;
+    gap: 60px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column h4 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
 .column a {
     display: block;
     color: #ccc;
