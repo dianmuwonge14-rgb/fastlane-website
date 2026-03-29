@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px;
+    padding: 15px 50px;
     background: #000;
 }
 
@@ -30,7 +30,6 @@ body {
 nav {
     display: flex;
     gap: 25px;
-    align-items: center;
 }
 
 /* NAV LINKS */
@@ -41,7 +40,7 @@ nav {
     padding-bottom: 5px;
 }
 
-/* 🔴 TOP RED LINE */
+/* TOP RED LINE */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -58,21 +57,21 @@ nav {
 }
 
 /* ===============================
-   🔥 MEGA MENU (FINAL FIX — FULL WIDTH)
+   🔥 MEGA MENU (FINAL RESET FIX)
 ================================ */
 .menu-item {
     position: relative;
 }
 
-/* FULL WIDTH DROPDOWN */
+/* DROPDOWN */
 .mega-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100vw;              /* 🔥 FULL WIDTH */
     background: #111827;
-    padding: 30px 80px;
+    padding: 25px 35px;
     display: none;
+    border-radius: 8px;
 }
 
 /* SHOW */
@@ -80,41 +79,41 @@ nav {
     display: block;
 }
 
-/* CENTER CONTENT INSIDE */
+/* PERFECT COLUMN LAYOUT */
 .mega-container {
-    max-width: 1200px;
-    margin: auto;
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
 }
 
 /* COLUMN */
 .column {
-    display: flex;
-    flex-direction: column;
+    min-width: 160px; /* 🔥 prevents cutting */
 }
 
 /* TITLES */
 .column h4 {
     color: gold;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 /* LINKS */
 .column a {
+    display: block;
     color: #ccc;
     text-decoration: none;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     position: relative;
+    width: fit-content;
 }
 
-/* 🔴 CLEAN SHORT RED LINE */
+/* 🔴 CLEAN RED LINE */
 .column a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 35px; /* 🔥 SHORT & CLEAN */
+    width: 30px;
     height: 2px;
     background: red;
     opacity: 0;
@@ -179,21 +178,10 @@ nav {
 .instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
 .youtube { background: #FF0000; }
 
-/* HOVER */
-.icons a:hover {
-    transform: scale(1.1);
-}
-
 /* HERO */
 .hero {
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.hero h1 {
-    font-size: 40px;
-    background: rgba(0,0,0,0.6);
-    padding: 15px 30px;
 }
