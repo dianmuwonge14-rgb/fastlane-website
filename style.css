@@ -19,7 +19,6 @@ body {
     justify-content: space-between;
     padding: 15px 40px;
     background: #0b0f19;
-    position: relative;
 }
 
 /* LOGO */
@@ -63,13 +62,24 @@ nav a:hover::after {
 /* MENU ITEM */
 .menu-item {
     position: relative;
-    padding-bottom: 20px; /* 🔥 THIS FIXES THE HOVER GAP */
+    display: flex;
+    align-items: center; /* 🔥 keeps "Cars" aligned with others */
+}
+
+/* 🔥 HOVER BRIDGE (fix gap WITHOUT moving text) */
+.menu-item::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
 }
 
 /* MEGA MENU */
 .mega-menu {
     position: absolute;
-    top: 100%; /* attach directly under Cars */
+    top: calc(100% + 5px); /* small space but still connected */
     left: 0;
     width: 100vw;
     background: #111827;
@@ -77,7 +87,7 @@ nav a:hover::after {
     padding: 40px 0;
 }
 
-/* KEEP OPEN ON HOVER */
+/* SHOW ON HOVER */
 .menu-item:hover .mega-menu {
     display: block;
 }
@@ -95,7 +105,7 @@ nav a:hover::after {
     width: 30%;
 }
 
-/* 🔥 BEAUTIFUL HEADINGS */
+/* HEADINGS */
 .column h4 {
     margin-bottom: 15px;
     font-size: 16px;
