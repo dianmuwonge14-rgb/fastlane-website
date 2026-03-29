@@ -51,21 +51,25 @@ nav {
 }
 
 /* ===============================
-   MEGA MENU
+   MENU ITEM
 ================================ */
 .menu-item {
     position: relative;
+    padding-bottom: 12px; /* keeps hover active */
 }
 
-/* HIDE MENU */
+/* ===============================
+   MEGA MENU
+================================ */
 .mega-menu {
     position: absolute;
-    top: 35px;
+    top: 100%; /* FIXES disappearing */
     left: 0;
     background: #111827;
     padding: 25px;
     display: none;
     min-width: 500px;
+    border-radius: 6px;
 }
 
 /* SHOW MENU */
@@ -79,44 +83,45 @@ nav {
     gap: 50px;
 }
 
-/* COLUMN */
+/* COLUMN TITLES */
 .column h4 {
     color: gold;
     margin-bottom: 10px;
 }
 
-/* LINKS (THIS IS THE IMPORTANT FIX) */
+/* ===============================
+   LINKS (FIXED UNDERLINE)
+================================ */
 .column a {
-    display: inline-block;   /* 🔥 FIXES STRETCHING LINE */
+    display: inline-block;
     color: #ccc;
     text-decoration: none;
     margin-bottom: 8px;
     position: relative;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
+    font-size: 14px;
 }
 
-/* REMOVE ANY DEFAULT LINES */
-.column a::before {
-    display: none !important;
-}
-
-/* SMALL RED LINE (NOT FULL WIDTH) */
+/* RED LINE (SHORT & ANIMATED) */
 .column a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0%;
+    width: 60%;
     height: 2px;
     background: red;
-    transition: 0.3s;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
-/* HOVER EFFECT */
+/* SHOW ON HOVER */
 .column a:hover::after {
-    width: 60%;
+    transform: scaleX(1);
 }
 
+/* HOVER TEXT */
 .column a:hover {
     color: #fff;
 }
@@ -158,4 +163,14 @@ nav {
     font-size: 40px;
     background: rgba(0,0,0,0.6);
     padding: 15px 30px;
+    border-radius: 5px;
+}
+
+/* ===============================
+   RESPONSIVE (MOBILE READY)
+================================ */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
 }
