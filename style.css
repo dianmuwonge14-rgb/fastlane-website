@@ -30,11 +30,198 @@ body {
 nav {
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
 /* NAV LINKS */
 .nav-link {
     color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* TOP RED LINE */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   MEGA MENU (FINAL FIX)
+================================ */
+.menu-item {
+    position: relative;
+}
+
+/* DROPDOWN */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111827;
+    padding: 25px 35px;
+    display: none;
+    border-radius: 8px;
+}
+
+/* SHOW */
+.menu-item:hover .mega-menu {
+    display: block;
+}
+
+/* CONTAINER */
+.mega-container {
+    display: flex;
+    gap: 60px;
+}
+
+/* COLUMN */
+.column {
+    min-width: 160px;
+}
+
+/* TITLES */
+.column h4 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* LINKS */
+.column a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 6px;
+    position: relative;
+    width: fit-content;
+}
+
+/* PERFECT RED LINE */
+.column a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 30px;
+    height: 2px;
+    background: red;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.column a:hover::after {
+    opacity: 1;
+}
+
+.column a:hover {
+    color: #fff;
+}
+
+/* ===============================
+   CONTACT
+================================ */
+.top-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* PHONE */
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+.contact-row i {
+    color: #25D366;
+}
+
+/* ICONS */
+.icons {
+    display: flex;
+    gap: 14px;
+}
+
+.icons a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.icons a i {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* BRAND COLORS */
+.tiktok {
+    background: #000;
+    box-shadow: -3px 0 12px #00f2ea, 3px 0 12px #ff0050;
+}
+
+.whatsapp { background: #25D366; }
+.facebook { background: #1877F2; }
+.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.youtube { background: #FF0000; }
+
+/* HOVER EFFECT */
+.icons a:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: url("images/airport.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 30px;
+}
+
+/* FLOATING */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.float {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float.whatsapp { background: #25D366; }
+.float.call { background: gold; color: black; }    color: #fff;
     text-decoration: none;
     position: relative;
     padding-bottom: 5px;
