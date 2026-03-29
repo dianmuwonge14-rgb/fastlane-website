@@ -19,6 +19,7 @@ body {
     justify-content: space-between;
     padding: 15px 40px;
     background: #0b0f19;
+    position: relative;
 }
 
 /* LOGO */
@@ -48,7 +49,7 @@ nav a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -6px;
     width: 0%;
     height: 2px;
     background: red;
@@ -62,12 +63,13 @@ nav a:hover::after {
 /* MENU ITEM */
 .menu-item {
     position: relative;
+    padding-bottom: 20px; /* 🔥 THIS FIXES THE HOVER GAP */
 }
 
 /* MEGA MENU */
 .mega-menu {
     position: absolute;
-    top: 60px;
+    top: 100%; /* attach directly under Cars */
     left: 0;
     width: 100vw;
     background: #111827;
@@ -75,7 +77,7 @@ nav a:hover::after {
     padding: 40px 0;
 }
 
-/* SHOW ON HOVER */
+/* KEEP OPEN ON HOVER */
 .menu-item:hover .mega-menu {
     display: block;
 }
@@ -93,19 +95,27 @@ nav a:hover::after {
     width: 30%;
 }
 
+/* 🔥 BEAUTIFUL HEADINGS */
 .column h4 {
-    color: gold;
     margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, gold, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+/* ITEMS */
 .column p {
     margin: 8px 0;
     cursor: pointer;
     color: #ccc;
+    transition: 0.3s;
 }
 
 .column p:hover {
     color: white;
+    transform: translateX(5px);
 }
 
 /* CONTACT */
