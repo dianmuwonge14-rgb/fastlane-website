@@ -1,99 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fastlane Transport</title>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    <link rel="stylesheet" href="style.css">
+/* BODY */
+body {
+    background: #0b0f1a;
+    color: #fff;
+}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #000;
+}
 
-<body>
+.logo {
+    font-weight: bold;
+    color: gold;
+}
 
-<header class="header">
+/* NAV */
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
 
-    <div class="logo">FASTLANE</div>
-
-    <nav>
-
-        <!-- CARS -->
-        <div class="menu-item">
-            <span class="nav-link">Cars</span>
-
-            <div class="mega-menu">
-                <div class="mega-container">
-
-                    <div class="column">
-                        <h4>Categories</h4>
-                        <a href="#">Luxury</a>
-                        <a href="#">Sports cars</a>
-                        <a href="#">Muscle car</a>
-                        <a href="#">Retro cars</a>
-                        <a href="#">VIP</a>
-                    </div>
-
-                    <div class="column">
-                        <h4>Body types</h4>
-                        <a href="#">Sedans</a>
-                        <a href="#">Coupes</a>
-                        <a href="#">SUV</a>
-                        <a href="#">Convertibles</a>
-                    </div>
-
-                    <div class="column">
-                        <h4>Rental by period</h4>
-                        <a href="#">Monthly rental</a>
-                        <a href="#">Without deposit rental</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- OTHER MENU -->
-        <a href="#" class="nav-link">Brands</a>
-        <a href="#" class="nav-link">Additional services</a>
-        <a href="#" class="nav-link">Mobile App</a>
-        <a href="#" class="nav-link">Club</a>
-        <a href="#" class="nav-link">Blog</a>
-        <a href="#" class="nav-link">Rent terms</a>
-        <a href="#" class="nav-link">FAQ</a>
-        <a href="#" class="nav-link">About us</a>
-        <a href="#" class="nav-link">Contacts</a>
-
-    </nav>
-
-    <div class="top-contact">
-        <span>+256 775 607625</span>
-
-        <div class="icons">
-            <a href="#"><i class="fab fa-telegram"></i></a>
-            <a href="https://wa.me/256775607625"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-
-            <!-- NEW CALL ICON -->
-            <a href="tel:+256775607625"><i class="fas fa-phone"></i></a>
-        </div>
-    </div>
-
-</header>
-
-<section class="hero">
-    <h1>Rent a Car in Uganda</h1>
-</section>
-
-</body>
-</html>.nav-link {
+/* LINKS */
+.nav-link {
     color: #fff;
     text-decoration: none;
     font-size: 15px;
     position: relative;
     padding: 5px 0;
-    cursor: pointer;
 }
 
 /* RED LINE */
@@ -112,7 +58,7 @@
     width: 100%;
 }
 
-/* MENU ITEM */
+/* MENU */
 .menu-item {
     position: relative;
     display: inline-block;
@@ -134,13 +80,11 @@
     display: block;
 }
 
-/* CONTAINER */
 .mega-container {
     display: flex;
     gap: 60px;
 }
 
-/* COLUMN */
 .column {
     display: flex;
     flex-direction: column;
@@ -151,7 +95,6 @@
     margin-bottom: 10px;
 }
 
-/* DROPDOWN LINKS */
 .column a {
     display: block;
     color: #ccc;
@@ -159,10 +102,8 @@
     margin-bottom: 8px;
     position: relative;
     padding-bottom: 4px;
-    width: fit-content;
 }
 
-/* RED LINE */
 .column a::after {
     content: "";
     position: absolute;
@@ -172,7 +113,6 @@
     height: 2px;
     background: red;
     transform: scaleX(0);
-    transform-origin: left;
     transition: 0.3s;
 }
 
@@ -180,39 +120,39 @@
     transform: scaleX(1);
 }
 
-.column a:hover {
-    color: #fff;
-}
-
 /* ===============================
-   PREMIUM BRAND ICONS (FORCED)
+   CONTACT + ICONS
 ================================ */
 .top-contact {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
+/* 🔥 BIG PREMIUM PHONE NUMBER */
 .top-contact span {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
+    font-size: 22px;          /* 🔥 BIGGER */
+    font-weight: bold;
+    color: gold;              /* 🔥 PREMIUM LOOK */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
-/* ICON CONTAINER */
+/* ICONS */
 .icons {
     display: flex;
     gap: 12px;
-    justify-content: flex-end;
 }
 
-/* BASE ICON */
+/* ICON STYLE */
 .icons a {
-    width: 42px;
-    height: 42px;
+    width: 45px;              /* slightly bigger */
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 20px;
     transition: 0.3s;
 }
 
@@ -223,30 +163,35 @@
 
 /* TELEGRAM */
 .icons a:nth-child(1) {
-    background-color: #0088cc !important;
+    background-color: #0088cc;
 }
 
 /* WHATSAPP */
 .icons a:nth-child(2) {
-    background-color: #25D366 !important;
+    background-color: #25D366;
 }
 
 /* FACEBOOK */
 .icons a:nth-child(3) {
-    background-color: #1877F2 !important;
+    background-color: #1877F2;
 }
 
 /* INSTAGRAM */
 .icons a:nth-child(4) {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af) !important;
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
 }
 
 /* YOUTUBE */
 .icons a:nth-child(5) {
-    background-color: #FF0000 !important;
+    background-color: #FF0000;
 }
 
-/* HOVER EFFECT */
+/* CALL ICON */
+.icons a:nth-child(6) {
+    background-color: #34B7F1;
+}
+
+/* HOVER */
 .icons a:hover {
     transform: translateY(-4px) scale(1.1);
     box-shadow: 0 0 20px rgba(255,255,255,0.6);
