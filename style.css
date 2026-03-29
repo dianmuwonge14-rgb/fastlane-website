@@ -43,7 +43,7 @@ nav {
     cursor: pointer;
 }
 
-/* TOP RED LINE */
+/* RED LINE */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -132,7 +132,7 @@ nav {
 }
 
 /* ===============================
-   PREMIUM BRAND ICONS (ALWAYS COLORED)
+   PREMIUM BRAND ICONS (FORCED)
 ================================ */
 .top-contact {
     text-align: right;
@@ -151,48 +151,52 @@ nav {
     justify-content: flex-end;
 }
 
-/* BASE ICON STYLE */
+/* BASE ICON */
 .icons a {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     font-size: 18px;
     transition: 0.3s;
-    color: #fff;
+}
+
+/* FORCE ICON COLOR */
+.icons a i {
+    color: #fff !important;
 }
 
 /* TELEGRAM */
 .icons a:nth-child(1) {
-    background: #0088cc;
+    background-color: #0088cc !important;
 }
 
 /* WHATSAPP */
 .icons a:nth-child(2) {
-    background: #25D366;
+    background-color: #25D366 !important;
 }
 
 /* FACEBOOK */
 .icons a:nth-child(3) {
-    background: #1877F2;
+    background-color: #1877F2 !important;
 }
 
 /* INSTAGRAM */
 .icons a:nth-child(4) {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af) !important;
 }
 
 /* YOUTUBE */
 .icons a:nth-child(5) {
-    background: #FF0000;
+    background-color: #FF0000 !important;
 }
 
 /* HOVER EFFECT */
 .icons a:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
 
 /* HERO */
