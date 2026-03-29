@@ -1,6 +1,4 @@
-/* ===============================
-   RESET
-================================ */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +6,13 @@
     font-family: Arial, sans-serif;
 }
 
-/* ===============================
-   BODY
-================================ */
+/* BODY */
 body {
     background: #0b0f1a;
     color: #fff;
 }
 
-/* ===============================
-   HEADER
-================================ */
+/* HEADER */
 .header {
     display: flex;
     justify-content: space-between;
@@ -27,14 +21,151 @@ body {
     background: #000;
 }
 
-/* LOGO */
 .logo {
     font-weight: bold;
     color: gold;
 }
 
-/* ===============================
-   NAV
+/* NAV */
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+/* LINKS */
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/* TOP RED LINE */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* MENU ITEM */
+.menu-item {
+    position: relative;
+    display: inline-block;
+}
+
+/* DROPDOWN */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111827;
+    padding: 25px;
+    display: none;
+    min-width: 550px;
+    border-radius: 6px;
+}
+
+/* SHOW */
+.menu-item:hover .mega-menu {
+    display: block;
+}
+
+/* CONTAINER */
+.mega-container {
+    display: flex;
+    gap: 60px;
+}
+
+/* COLUMN */
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column h4 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* DROPDOWN LINKS */
+.column a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    position: relative;
+    padding-bottom: 4px;
+    width: fit-content;
+}
+
+/* RED LINE */
+.column a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    height: 2px;
+    background: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.3s;
+}
+
+.column a:hover::after {
+    transform: scaleX(1);
+}
+
+.column a:hover {
+    color: #fff;
+}
+
+/* CONTACT */
+.top-contact {
+    text-align: right;
+}
+
+.top-contact span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.icons a {
+    color: #aaa;
+    margin-left: 8px;
+}
+
+.icons a:hover {
+    color: gold;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: url("images/airport.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 30px;
+    border-radius: 5px;
+}   NAV
 ================================ */
 nav {
     display: flex;
