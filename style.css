@@ -42,12 +42,29 @@ nav {
     align-items: center;
 }
 
-/* NAV LINKS */
+/* TOP NAV LINKS */
 .nav-link {
     color: #fff;
     text-decoration: none;
     font-size: 15px;
     position: relative;
+    padding-bottom: 5px;
+}
+
+/* RED LINE FOR TOP NAV */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* ===============================
@@ -55,7 +72,7 @@ nav {
 ================================ */
 .menu-item {
     position: relative;
-    padding-bottom: 12px; /* keeps hover active */
+    padding-bottom: 10px;
 }
 
 /* ===============================
@@ -63,12 +80,12 @@ nav {
 ================================ */
 .mega-menu {
     position: absolute;
-    top: 100%; /* FIXES disappearing */
+    top: 100%;
     left: 0;
     background: #111827;
     padding: 25px;
     display: none;
-    min-width: 500px;
+    min-width: 550px;
     border-radius: 6px;
 }
 
@@ -80,29 +97,36 @@ nav {
 /* CONTAINER */
 .mega-container {
     display: flex;
-    gap: 50px;
+    gap: 60px;
 }
 
-/* COLUMN TITLES */
+/* COLUMN */
+.column {
+    display: flex;
+    flex-direction: column;   /* 🔥 STACK ITEMS VERTICALLY */
+}
+
+/* COLUMN TITLE */
 .column h4 {
     color: gold;
     margin-bottom: 10px;
 }
 
 /* ===============================
-   LINKS (FIXED UNDERLINE)
+   DROPDOWN LINKS (FIXED)
 ================================ */
 .column a {
-    display: inline-block;
+    display: block;   /* 🔥 THIS FIXES INLINE ISSUE */
     color: #ccc;
     text-decoration: none;
     margin-bottom: 8px;
     position: relative;
     padding-bottom: 4px;
     font-size: 14px;
+    width: fit-content;
 }
 
-/* RED LINE (SHORT & ANIMATED) */
+/* SMALL RED LINE */
 .column a::after {
     content: "";
     position: absolute;
@@ -116,12 +140,10 @@ nav {
     transition: transform 0.3s ease;
 }
 
-/* SHOW ON HOVER */
 .column a:hover::after {
     transform: scaleX(1);
 }
 
-/* HOVER TEXT */
 .column a:hover {
     color: #fff;
 }
@@ -164,13 +186,4 @@ nav {
     background: rgba(0,0,0,0.6);
     padding: 15px 30px;
     border-radius: 5px;
-}
-
-/* ===============================
-   RESPONSIVE (MOBILE READY)
-================================ */
-@media (max-width: 768px) {
-    nav {
-        display: none;
-    }
 }
