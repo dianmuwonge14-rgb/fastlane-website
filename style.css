@@ -43,7 +43,7 @@ nav {
     cursor: pointer;
 }
 
-/* TOP RED LINE */
+/* RED LINE TOP */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -77,7 +77,6 @@ nav {
     border-radius: 6px;
 }
 
-/* SHOW */
 .menu-item:hover .mega-menu {
     display: block;
 }
@@ -132,181 +131,50 @@ nav {
     color: #fff;
 }
 
-/* CONTACT */
+/* ===============================
+   PREMIUM ICONS
+================================ */
 .top-contact {
     text-align: right;
 }
 
 .top-contact span {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
+/* ICON CONTAINER */
+.icons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+/* ICON STYLE */
 .icons a {
-    color: #aaa;
-    margin-left: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    border-radius: 50%;
+    color: gold;
+    font-size: 18px;
+    transition: 0.3s;
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
 }
 
+/* PREMIUM HOVER */
 .icons a:hover {
-    color: gold;
+    background: gold;
+    color: #000;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
 }
 
 /* HERO */
-.hero {
-    height: 80vh;
-    background: url("images/airport.jpg") center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 40px;
-    background: rgba(0,0,0,0.6);
-    padding: 15px 30px;
-    border-radius: 5px;
-}   NAV
-================================ */
-nav {
-    display: flex;
-    gap: 25px;
-    align-items: center; /* 🔥 ENSURES PERFECT ALIGNMENT */
-}
-
-/* ALL NAV ITEMS SAME LEVEL */
-.nav-link,
-.menu-item > .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    position: relative;
-    padding: 5px 0;
-    display: inline-block;
-}
-
-/* RED LINE TOP NAV */
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: red;
-    transition: 0.3s;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* ===============================
-   MENU ITEM (FIXED ALIGNMENT)
-================================ */
-.menu-item {
-    position: relative;
-    display: flex;
-    align-items: center; /* 🔥 THIS FIXES "Cars" POSITION */
-}
-
-/* ===============================
-   MEGA MENU
-================================ */
-.mega-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #111827;
-    padding: 25px;
-    display: none;
-    min-width: 550px;
-    border-radius: 6px;
-}
-
-/* SHOW MENU */
-.menu-item:hover .mega-menu {
-    display: block;
-}
-
-/* CONTAINER */
-.mega-container {
-    display: flex;
-    gap: 60px;
-}
-
-/* COLUMN */
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-/* COLUMN TITLE */
-.column h4 {
-    color: gold;
-    margin-bottom: 10px;
-}
-
-/* ===============================
-   DROPDOWN LINKS
-================================ */
-.column a {
-    display: block;
-    color: #ccc;
-    text-decoration: none;
-    margin-bottom: 8px;
-    position: relative;
-    padding-bottom: 4px;
-    font-size: 14px;
-    width: fit-content;
-}
-
-/* RED LINE */
-.column a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60%;
-    height: 2px;
-    background: red;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.column a:hover::after {
-    transform: scaleX(1);
-}
-
-.column a:hover {
-    color: #fff;
-}
-
-/* ===============================
-   CONTACT
-================================ */
-.top-contact {
-    text-align: right;
-}
-
-.top-contact span {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.icons a {
-    color: #aaa;
-    margin-left: 8px;
-    font-size: 14px;
-}
-
-.icons a:hover {
-    color: gold;
-}
-
-/* ===============================
-   HERO
-================================ */
 .hero {
     height: 80vh;
     background: url("images/airport.jpg") center/cover no-repeat;
