@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 15px 60px;
     background: #000;
 }
 
@@ -58,23 +58,21 @@ nav {
 }
 
 /* ===============================
-   🔥 MEGA MENU (PERFECT FIX)
+   🔥 MEGA MENU (FINAL FIX — FULL WIDTH)
 ================================ */
 .menu-item {
     position: relative;
 }
 
-/* DROPDOWN */
+/* FULL WIDTH DROPDOWN */
 .mega-menu {
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-40%); /* 🔥 ADJUSTED (NOT FULL CENTER) */
+    left: 0;
+    width: 100vw;              /* 🔥 FULL WIDTH */
     background: #111827;
-    padding: 30px 50px;
+    padding: 30px 80px;
     display: none;
-    border-radius: 10px;
-    min-width: 700px;
 }
 
 /* SHOW */
@@ -82,10 +80,12 @@ nav {
     display: block;
 }
 
-/* CONTAINER */
+/* CENTER CONTENT INSIDE */
 .mega-container {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
-    gap: 80px;
+    justify-content: space-between;
 }
 
 /* COLUMN */
@@ -98,7 +98,6 @@ nav {
 .column h4 {
     color: gold;
     margin-bottom: 12px;
-    font-size: 16px;
 }
 
 /* LINKS */
@@ -107,25 +106,23 @@ nav {
     text-decoration: none;
     margin-bottom: 8px;
     position: relative;
-    display: inline-block;
 }
 
-/* 🔴 PERFECT RED LINE */
+/* 🔴 CLEAN SHORT RED LINE */
 .column a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 50px; /* 🔥 FIXED LENGTH */
+    width: 35px; /* 🔥 SHORT & CLEAN */
     height: 2px;
     background: red;
-    transform: scaleX(0);
-    transform-origin: left;
+    opacity: 0;
     transition: 0.3s;
 }
 
 .column a:hover::after {
-    transform: scaleX(1);
+    opacity: 1;
 }
 
 .column a:hover {
@@ -141,7 +138,6 @@ nav {
     align-items: flex-end;
 }
 
-/* PHONE */
 .contact-row {
     display: flex;
     align-items: center;
@@ -151,16 +147,6 @@ nav {
     color: gold;
     margin-bottom: 10px;
     text-decoration: none;
-    animation: glow 2s infinite alternate;
-}
-
-.contact-row i {
-    color: #25D366;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 5px gold; }
-    to { text-shadow: 0 0 15px gold; }
 }
 
 /* ICONS */
@@ -182,13 +168,12 @@ nav {
     color: #fff;
 }
 
-/* TIKTOK */
+/* BRAND COLORS */
 .tiktok {
     background: #000;
     box-shadow: -3px 0 12px #00f2ea, 3px 0 12px #ff0050;
 }
 
-/* OTHER ICONS */
 .whatsapp { background: #25D366; }
 .facebook { background: #1877F2; }
 .instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
@@ -196,29 +181,12 @@ nav {
 
 /* HOVER */
 .icons a:hover {
-    transform: translateY(-4px) scale(1.1);
-}
-
-/* FLOATING */
-.floating-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-.float {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transform: scale(1.1);
 }
 
 /* HERO */
 .hero {
     height: 80vh;
-    background: url("images/airport.jpg") center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
