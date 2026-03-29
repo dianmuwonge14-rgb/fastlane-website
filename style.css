@@ -36,6 +36,149 @@ nav {
 .nav-link {
     color: #fff;
     text-decoration: none;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: red;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* MENU */
+.menu-item {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    background: #111827;
+    padding: 25px;
+    display: none;
+}
+
+.menu-item:hover .mega-menu {
+    display: block;
+}
+
+.mega-container {
+    display: flex;
+    gap: 60px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column h4 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* CONTACT */
+.top-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* PHONE */
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    animation: glow 2s infinite alternate;
+}
+
+.contact-row i {
+    color: #25D366;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px gold; }
+    to { text-shadow: 0 0 15px gold; }
+}
+
+/* ICONS */
+.icons {
+    display: flex;
+    gap: 12px;
+}
+
+.icons a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.icons a i {
+    color: #fff;
+}
+
+/* TIKTOK */
+.icons a:nth-child(1) {
+    background: #000;
+    box-shadow: 0 0 10px #00f2ea, 0 0 10px #ff0050;
+}
+
+/* WHATSAPP */
+.icons a:nth-child(2) { background: #25D366; }
+
+/* FACEBOOK */
+.icons a:nth-child(3) { background: #1877F2; }
+
+/* INSTAGRAM */
+.icons a:nth-child(4) {
+    background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+}
+
+/* YOUTUBE */
+.icons a:nth-child(5) { background: #FF0000; }
+
+/* FLOATING */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.float {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: url("images/airport.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    color: #fff;
+    text-decoration: none;
     font-size: 15px;
     position: relative;
 }
