@@ -41,7 +41,7 @@ nav {
     padding-bottom: 5px;
 }
 
-/* RED LINE (TOP NAV) */
+/* 🔴 TOP RED LINE */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -58,23 +58,22 @@ nav {
 }
 
 /* ===============================
-   🔥 MEGA MENU (FINAL FIX)
+   🔥 MEGA MENU (FINAL PERFECT FIX)
 ================================ */
 .menu-item {
     position: relative;
 }
 
-/* BIG DROPDOWN */
+/* DROPDOWN */
 .mega-menu {
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%); /* 🔥 CENTER FIX */
+    left: 0; /* 🔥 FIX: align left to prevent cut */
     background: #111827;
-    padding: 30px 50px;
+    padding: 30px 40px;
     display: none;
     border-radius: 10px;
-    width: 700px; /* 🔥 FULL WIDTH */
+    min-width: 650px;
 }
 
 /* SHOW */
@@ -85,14 +84,13 @@ nav {
 /* CONTAINER */
 .mega-container {
     display: flex;
-    justify-content: space-between;
+    gap: 70px;
 }
 
 /* COLUMN */
 .column {
     display: flex;
     flex-direction: column;
-    min-width: 150px;
 }
 
 /* TITLES */
@@ -111,13 +109,13 @@ nav {
     display: inline-block;
 }
 
-/* 🔴 RED LINE (VISIBLE + CLEAN) */
+/* 🔴 FIXED RED LINE (NORMAL SIZE) */
 .column a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 100%;
+    width: 40%; /* 🔥 FIXED LENGTH */
     height: 2px;
     background: red;
     transform: scaleX(0);
@@ -164,9 +162,7 @@ nav {
     to { text-shadow: 0 0 15px gold; }
 }
 
-/* ===============================
-   ICONS
-================================ */
+/* ICONS */
 .icons {
     display: flex;
     gap: 12px;
