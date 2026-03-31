@@ -49,9 +49,14 @@ body {
 .header-right {
     display: flex;
     flex-direction: column;
-    /* THIS FORCES VERTICAL */
     align-items: flex-end;
     gap: 10px;
+}
+
+/* MATCH WIDTH */
+.contacts,
+.socials {
+    width: 220px;   /* SAME WIDTH FOR BOTH */
 }
 
 /* CONTACTS */
@@ -63,25 +68,24 @@ body {
 
 /* PHONE LINKS */
 .contacts a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     color: gold;
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;
 }
 
-.contacts a:hover {
-    color: #ffd700;
-}
-
-/* PHONE ICON */
+/* ICON */
 .contacts i {
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
 /* SOCIAL ICONS */
 .socials {
     display: flex;
-    gap: 10px;
+    justify-content: space-between; /* SPREAD EVENLY */
 }
 
 /* ICON STYLE */
