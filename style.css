@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0f1a;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #000;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+}
+
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 40px;
+    background: linear-gradient(to right, #0b0f1a, #1a2238);
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+/* FAQ */
+.faq-section {
+    padding: 40px;
+}
+
+.faq-section h2 {
+    margin-bottom: 20px;
+}
+
+#faqSearch {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+}
+
+.faq-item {
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.faq-question {
+    font-weight: bold;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* FOOTER */
+.footer {
+    background: black;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.footer h2 {
+    color: gold;
+}
