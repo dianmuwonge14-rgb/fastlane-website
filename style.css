@@ -48,18 +48,34 @@ body {
 /* RIGHT SIDE */
 .header-right {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    /* THIS FORCES VERTICAL */
+    align-items: flex-end;
+    gap: 10px;
 }
 
 /* CONTACTS */
 .contacts {
     display: flex;
     flex-direction: column;
-    font-size: 13px;
+    gap: 6px;
+}
+
+/* PHONE LINKS */
+.contacts a {
     color: gold;
     font-weight: bold;
-    text-align: right;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    color: #ffd700;
+}
+
+/* PHONE ICON */
+.contacts i {
+    margin-right: 6px;
 }
 
 /* SOCIAL ICONS */
@@ -70,18 +86,18 @@ body {
 
 /* ICON STYLE */
 .socials a {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     transition: 0.3s;
 }
 
-/* INDIVIDUAL COLORS */
+/* COLORS */
 .socials a:nth-child(1) {
     background: radial-gradient(circle, #000, #ff00cc);
 }
@@ -102,12 +118,11 @@ body {
     background: #FF0000;
 }
 
-/* HOVER EFFECT */
 .socials a:hover {
     transform: scale(1.15);
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
     padding: 80px 40px;
     background: linear-gradient(to right, #0b0f1a, #1a2238);
@@ -115,16 +130,11 @@ body {
 
 .hero h1 {
     font-size: 42px;
-    font-weight: bold;
 }
 
-/* ===== FAQ ===== */
+/* FAQ */
 .faq-section {
     padding: 40px;
-}
-
-.faq-section h2 {
-    margin-bottom: 20px;
 }
 
 #faqSearch {
@@ -135,31 +145,9 @@ body {
     border: none;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer {
     background: black;
     padding: 40px;
     margin-top: 40px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer h2 {
-    color: gold;
-    margin-bottom: 10px;
-}
-
-.footer a {
-    display: block;
-    color: #ccc;
-    text-decoration: none;
-    margin-bottom: 6px;
-}
-
-.footer a:hover {
-    color: white;
 }
