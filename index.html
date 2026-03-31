@@ -7,72 +7,15 @@
     <title>Fastlane Transport</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        /* ===== PREMIUM ADDITIONS ===== */
-
-        .faq-section {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .faq-search input {
-            width: 100%;
-            padding: 14px;
-            border-radius: 8px;
-            border: none;
-            margin-bottom: 25px;
-            font-size: 15px;
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            margin-bottom: 12px;
-            padding: 18px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .faq-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .faq-question i {
-            transition: 0.3s;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: 0.4s ease;
-            color: #ccc;
-            padding-top: 0;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-top: 10px;
-        }
-
-        .faq-item.active i {
-            transform: rotate(180deg);
-        }
-    </style>
-
 </head>
 
 <body>
 
-    <header class="header">
+<!-- ===== HEADER ===== -->
+<header class="header">
 
     <div class="header-left">
         <h2 class="logo">FASTLANE</h2>
@@ -92,7 +35,6 @@
     </nav>
 
     <div class="header-right">
-
         <div class="contacts">
             <span>📞 +256 775 607 625</span>
             <span>📞 +256 745 185 914</span>
@@ -104,141 +46,220 @@
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-
     </div>
 
 </header>
 
-    <section class="hero">
-        <h1>Rent a Car in Uganda</h1>
-    </section>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>Rent a Car in Uganda</h1>
+</section>
 
-    <section class="faq-section">
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
 
-        <h2>Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
 
-        <div class="faq-search">
-            <input type="text" id="faqSearch" placeholder="Search questions...">
+    <input type="text" id="faqSearch" placeholder="Search questions...">
+
+    <div class="faq-container">
+
+        <!-- YOUR ORIGINAL + NEW QUESTIONS -->
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How can I book a vehicle with Fastlane Transport?
+            </div>
+            <div class="faq-answer">
+                Booking with Fastlane Transport is simple and convenient. You can contact us via phone or WhatsApp and our team will guide you through available vehicles, pricing, and confirmation.
+            </div>
         </div>
 
-        <div class="faq-container">
-
-            <!-- FAQ ITEM TEMPLATE -->
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How can I book a vehicle with Fastlane Transport?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Booking is simple. Contact us via phone or WhatsApp and our team will guide you through vehicle
-                    options, pricing, and confirmation.
-                </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you provide airport pickup services?
             </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you provide airport pickup services?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, we offer reliable airport pickups with timely coordination based on your flight schedule.
-                </div>
+            <div class="faq-answer">
+                Yes, we provide reliable airport pickup services with proper coordination based on your flight schedule.
             </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are your drivers professional?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    All our drivers are trained, licensed, and experienced to ensure your safety and comfort.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What documents are required?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    A valid driving license and identification (ID or passport) are required.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can tourists rent cars?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, international visitors are welcome and can use international driving permits.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you offer chauffeur services?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, we provide professional drivers for a comfortable experience.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are vehicles insured?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    All our vehicles are fully insured for your safety.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you offer long-term rentals?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, we offer flexible long-term rental plans at discounted rates.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you provide corporate transport?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, we provide transport solutions for businesses and organizations.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Is roadside assistance available?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, we offer 24/7 roadside support.
-                </div>
-            </div>
-
-            <!-- ADD MORE (you can duplicate later easily) -->
-
         </div>
 
-    </section>
+        <div class="faq-item">
+            <div class="faq-question">
+                Are your drivers professional?
+            </div>
+            <div class="faq-answer">
+                All our drivers are trained, licensed, and experienced to ensure your safety and comfort.
+            </div>
+        </div>
 
-    <footer class="footer">
-        <h2>FASTLANE</h2>
-        <p>© 2026 Fastlane Transport</p>
-    </footer>
+        <div class="faq-item">
+            <div class="faq-question">
+                What documents are required to rent a car?
+            </div>
+            <div class="faq-answer">
+                A valid driving license and identification such as a passport or national ID are required.
+            </div>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can tourists rent cars in Uganda?
+            </div>
+            <div class="faq-answer">
+                Yes, international clients are welcome and may use international driving permits where applicable.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you offer chauffeur services?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide professional drivers for a comfortable and stress-free experience.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are your vehicles insured?
+            </div>
+            <div class="faq-answer">
+                Yes, all our vehicles are fully insured to guarantee safety and peace of mind.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you offer long-term rentals?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide flexible long-term rental options including monthly packages at discounted rates.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you provide corporate transport services?
+            </div>
+            <div class="faq-answer">
+                Yes, we offer customized transport solutions for businesses and organizations.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is roadside assistance available?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide 24/7 roadside assistance to ensure uninterrupted service.
+            </div>
+        </div>
+
+        <!-- ADDITIONAL PROFESSIONAL QUESTIONS -->
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I cancel or modify my booking?
+            </div>
+            <div class="faq-answer">
+                Yes, bookings can be modified or canceled based on our policy. Please contact us in advance for assistance.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you operate across Uganda?
+            </div>
+            <div class="faq-answer">
+                Yes, we operate nationwide and can arrange transport in multiple regions across Uganda.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Are child seats available?
+            </div>
+            <div class="faq-answer">
+                Yes, child seats can be provided upon request to ensure safety for young passengers.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I book a car at the last minute?
+            </div>
+            <div class="faq-answer">
+                Yes, last-minute bookings are possible depending on availability. We recommend booking early.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you offer tour packages?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide customized tour packages for both local and international clients.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is fuel included in rental prices?
+            </div>
+            <div class="faq-answer">
+                Fuel is usually not included unless specified. We will clearly communicate all pricing details.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What payment methods do you accept?
+            </div>
+            <div class="faq-answer">
+                We accept mobile money, bank transfers, and cash payments for your convenience.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div>
+            <h2>FASTLANE</h2>
+            <p>© 2026 Fastlane Transport</p>
+        </div>
+
+        <div>
+            <h2>About</h2>
+            <a href="#">Contacts</a>
+            <a href="#">Blog</a>
+            <a href="#">FAQ</a>
+        </div>
+
+        <div>
+            <h2>Services</h2>
+            <a href="#">Airport pickup</a>
+            <a href="#">Private hire</a>
+            <a href="#">Tour trips</a>
+        </div>
+
+        <div>
+            <h2>Contacts</h2>
+            <p>+256 775 607 625</p>
+            <p>+256 745 185 914</p>
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
