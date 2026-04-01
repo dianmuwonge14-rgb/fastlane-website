@@ -145,3 +145,53 @@ Details: ${inputs[2].value}
     const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 });
+// ===== ADVANCED SLIDER =====
+document.querySelectorAll(".car-slider").forEach(slider => {
+
+    const slides = slider.querySelector(".slides");
+    const images = slides.querySelectorAll("img");
+    const prev = slider.querySelector(".prev");
+    const next = slider.querySelector(".next");
+    const dotsContainer = slider.querySelector(".dots");
+
+    let index = 0;
+
+    // CREATE DOTS
+    images.forEach((_, i) => {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+
+        dot.addEventListener("click", () => {
+            index = i;
+            updateSlider();
+        });
+
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("span");
+
+    function updateSlider() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+
+        dots.forEach(d => d.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    next.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateSlider();
+    });
+
+    prev.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateSlider();
+    });
+
+    // AUTO SLIDE
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        updateSlider();
+    }, 3000);
+
+});
