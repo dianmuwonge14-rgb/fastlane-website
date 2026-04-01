@@ -553,3 +553,58 @@ body {
     cursor: pointer;
     font-size: 20px;
 }
+/* ===== ADVANCED CAR SLIDER ===== */
+.car-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* ARROWS */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* DOTS */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dots span {
+    height: 8px;
+    width: 8px;
+    margin: 0 4px;
+    background: #ccc;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dots .active {
+    background: gold;
+}
