@@ -380,3 +380,7 @@ body {
 .brand-card:hover img {
     filter: grayscale(0%);
 }
+/* PAUSE ON HOVER */
+.brands-slider:hover .brands-track {
+    animation-play-state: paused;
+}
