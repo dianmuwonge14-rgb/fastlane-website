@@ -424,3 +424,80 @@ body {
         gap: 15px;
     }
 }
+/* ===== CAR SECTION ===== */
+.cars {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.cars h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: gold;
+}
+
+/* GRID */
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.car-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.car-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.08);
+}
+
+/* IMAGE */
+.car-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.car-card h3 {
+    margin: 15px;
+}
+
+.car-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0 15px 10px;
+    line-height: 1.6;
+}
+
+.car-card span {
+    display: block;
+    margin: 0 15px 15px;
+    font-weight: bold;
+    color: gold;
+}
+
+/* BUTTON */
+.book-btn {
+    display: block;
+    margin: 0 15px 20px;
+    padding: 10px;
+    text-align: center;
+    background: gold;
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: white;
+}
