@@ -107,7 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const name = document.getElementById("userName").value;
         const phone = document.getElementById("userPhone").value;
-        const date = document.getElementById("pickupDate").value;
+        const type = document.getElementById("rentalType").value;
+        const start = document.getElementById("startDate").value;
+        const end = document.getElementById("endDate").value;
         const location = document.getElementById("pickupLocation").value;
         const details = document.getElementById("tripDetails").value;
 
@@ -115,8 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
 Car: ${selectedCar}
 Name: ${name}
 Phone: ${phone}
-Pickup Date: ${date}
-Location: ${location}
+Rental Type: ${type}
+Start Date: ${start}
+End Date: ${end}
+Pickup Location: ${location}
 Details: ${details}`;
 
         const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
