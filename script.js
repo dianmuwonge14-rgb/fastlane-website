@@ -103,24 +103,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
     closePopup.onclick = () => popup.style.display = "none";
 
+    // ===== VALIDATED BOOKING =====
     document.getElementById("sendBooking").addEventListener("click", () => {
 
-        const name = document.getElementById("userName").value;
-        const phone = document.getElementById("userPhone").value;
-        const type = document.getElementById("rentalType").value;
-        const start = document.getElementById("startDate").value;
-        const end = document.getElementById("endDate").value;
-        const location = document.getElementById("pickupLocation").value;
+        const name = document.getElementById("userName");
+        const phone = document.getElementById("userPhone");
+        const type = document.getElementById("rentalType");
+        const start = document.getElementById("startDate");
+        const end = document.getElementById("endDate");
+        const location = document.getElementById("pickupLocation");
+
+        // RESET ERRORS
+        [name, phone, type, start, end, location].forEach(input => {
+            input.classList.remove("input-error");
+        });
+
+        let valid = true;
+
+        if (name.value.trim() === "") {
+            name.classList.add("input-error");
+            valid = false;
+        }
+
+        if (phone.value.trim() === "") {
+            phone.classList.add("input-error");
+            valid = false;
+        }
+
+        if (type.value === "") {
+            type.classList.add("input-error");
+            valid = false;
+        }
+
+        if (start.value === "") {
+            start.classList.add("input-error");
+            valid = false;
+        }
+
+        if (end.value === "") {
+            end.classList.add("input-error");
+            valid = false;
+        }
+
+        if (location.value.trim() === "") {
+            location.classList.add("input-error");
+            valid = false;
+        }
+
+        if (!valid) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
         const details = document.getElementById("tripDetails").value;
 
         const message = `🚗 Booking Request
 Car: ${selectedCar}
-Name: ${name}
-Phone: ${phone}
-Rental Type: ${type}
-Start Date: ${start}
-End Date: ${end}
-Pickup Location: ${location}
+Name: ${name.value}
+Phone: ${phone.value}
+Rental Type: ${type.value}
+Start Date: ${start.value}
+End Date: ${end.value}
+Pickup Location: ${location.value}
 Details: ${details}`;
 
         const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
