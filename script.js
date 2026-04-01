@@ -70,3 +70,78 @@ brandCards.forEach(card => {
         console.log("Filtering by:", brand);
     });
 });
+// ===== SHOW ALL BUTTON =====
+document.getElementById("showAllBtn").addEventListener("click", () => {
+    document.querySelectorAll(".car-card").forEach(car => {
+        car.style.display = "block";
+    });
+
+    document.querySelectorAll(".brand-card").forEach(b => b.classList.remove("active"));
+});
+
+// ===== ACTIVE BRAND + FILTER =====
+const brandCards = document.querySelectorAll(".brand-card");
+
+brandCards.forEach(card => {
+    card.addEventListener("click", () => {
+
+        brandCards.forEach(b => b.classList.remove("active"));
+        card.classList.add("active");
+
+        const brand = card.getAttribute("data-brand");
+
+        document.querySelectorAll(".car-card").forEach(car => {
+            car.style.display =
+                car.getAttribute("data-brand") === brand ? "block" : "none";
+        });
+    });
+});
+
+// ===== PRICE FILTER =====
+document.getElementById("priceFilter").addEventListener("change", e => {
+    const value = e.target.value;
+
+    document.querySelectorAll(".car-card").forEach(car => {
+
+        const price = parseInt(car.innerText.replace(/[^0-9]/g, ""));
+
+        if (
+            value === "low" && price < 250000 ||
+            value === "mid" && price >= 250000 && price <= 500000 ||
+            value === "high" && price > 500000 ||
+            value === "all"
+        ) {
+            car.style.display = "block";
+        } else {
+            car.style.display = "none";
+        }
+    });
+});
+
+// ===== BOOKING POPUP =====
+const popup = document.getElementById("bookingPopup");
+const closePopup = document.getElementById("closePopup");
+
+document.querySelectorAll(".book-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        popup.style.display = "flex";
+    });
+});
+
+closePopup.onclick = () => popup.style.display = "none";
+
+// ===== WHATSAPP SEND =====
+document.getElementById("sendBooking").addEventListener("click", () => {
+
+    const inputs = document.querySelectorAll(".popup-content input, textarea");
+
+    const message = `
+Booking Request:
+Name: ${inputs[0].value}
+Phone: ${inputs[1].value}
+Details: ${inputs[2].value}
+    `;
+
+    const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+});
