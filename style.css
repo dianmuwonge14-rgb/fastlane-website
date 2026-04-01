@@ -353,7 +353,7 @@ body {
 
 /* BRAND CARD UPGRADE */
 .brand-card {
-    min-width: 140px;
+    min-width: 160px;
     background: rgba(255,255,255,0.03);
     padding: 20px;
     border-radius: 12px;
