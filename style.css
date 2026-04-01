@@ -155,3 +155,93 @@ body {
     padding: 40px;
     margin-top: 40px;
 }
+/* ===== WHY US ===== */
+.why-us {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: gold;
+}
+
+.why-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.why-card {
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.06);
+}
+
+.why-card i {
+    font-size: 28px;
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+    padding: 60px 40px;
+    text-align: center;
+    background: #0f1525;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: gold;
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.04);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.08);
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+    color: gold;
+    font-size: 14px;
+}
