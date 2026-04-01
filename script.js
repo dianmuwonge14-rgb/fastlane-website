@@ -49,3 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
     animatedItems.forEach(el => observer.observe(el));
 
 });
+// ===== BRAND FILTER (FOR CAR SECTION) =====
+const brandCards = document.querySelectorAll(".brand-card");
+
+brandCards.forEach(card => {
+    card.addEventListener("click", () => {
+        const brand = card.getAttribute("data-brand");
+
+        // FUTURE: filter cars
+        const cars = document.querySelectorAll(".car-card");
+
+        cars.forEach(car => {
+            if (brand === "all" || car.getAttribute("data-brand") === brand) {
+                car.style.display = "block";
+            } else {
+                car.style.display = "none";
+            }
+        });
+
+        console.log("Filtering by:", brand);
+    });
+});
