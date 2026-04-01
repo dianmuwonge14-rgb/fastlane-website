@@ -653,3 +653,73 @@ body {
     padding: 10px;
     margin-bottom: 10px;
 }
+/* ===== PREMIUM BOOKING POPUP ===== */
+.popup-content {
+    background: #0f1525;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+/* TITLE */
+.popup-content h2 {
+    margin-bottom: 15px;
+    color: gold;
+    text-align: center;
+}
+
+/* INPUTS */
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #1a1f35;
+    color: white;
+    font-size: 14px;
+}
+
+/* PLACEHOLDER */
+.popup-content input::placeholder,
+.popup-content textarea::placeholder {
+    color: #aaa;
+}
+
+/* BUTTON */
+#sendBooking {
+    width: 100%;
+    padding: 12px;
+    background: gold;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#sendBooking:hover {
+    background: white;
+}
+
+/* CLOSE BUTTON */
+#closePopup {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* ERROR STYLE */
+.input-error {
+    border: 1px solid red;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
