@@ -328,3 +328,55 @@ body {
     filter: grayscale(0%);
     transform: scale(1.05);
 }
+/* ===== BRANDS SLIDER ===== */
+.brands-slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.brands-track {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    animation: scrollBrands 20s linear infinite;
+}
+
+/* AUTO SCROLL */
+@keyframes scrollBrands {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* BRAND CARD UPGRADE */
+.brand-card {
+    min-width: 140px;
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* GLOW EFFECT 🔥 */
+.brand-card:hover {
+    transform: translateY(-6px) scale(1.05);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* IMAGE */
+.brand-card img {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.brand-card:hover img {
+    filter: grayscale(0%);
+}
