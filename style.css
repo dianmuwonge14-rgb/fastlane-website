@@ -608,3 +608,43 @@ body {
 .dots .active {
     background: gold;
 }
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .nav {
+        display: none;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    /* CAR GRID */
+    .car-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* CONTROLS */
+    .car-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* POPUP */
+    .popup-content {
+        width: 90%;
+    }
+
+    /* BRAND LOGOS */
+    .brand-card {
+        min-width: 120px;
+    }
+}
