@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== SCROLL ANIMATION =====
     const animatedItems = document.querySelectorAll(
-        ".why-card, .testimonial-card, .faq-item, .hero h1, .brand-card"
+        ".why-card, .testimonial-card, .faq-item, .hero h1, .brand-card, .car-card"
     );
 
     // Add initial class
