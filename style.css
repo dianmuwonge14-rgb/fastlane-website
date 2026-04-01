@@ -419,3 +419,8 @@ body {
         height: 75px;
     }
 }
+@media (max-width: 600px) {
+    .brands-track {
+        gap: 15px;
+    }
+}
