@@ -831,17 +831,21 @@
     </footer>
 
     <script src="script.js"></script>
-<!-- ===== BOOKING POPUP ===== -->
+<!-- ===== SMART BOOKING POPUP ===== -->
 <div class="booking-popup" id="bookingPopup">
 
     <div class="popup-content">
         <span id="closePopup">&times;</span>
 
-        <h2>Book This Car</h2>
+        <h2 id="carTitle">Book Car</h2>
 
-        <input type="text" placeholder="Your Name">
-        <input type="tel" placeholder="Phone Number">
-        <textarea placeholder="Trip details..."></textarea>
+        <input type="text" id="userName" placeholder="Your Name">
+        <input type="tel" id="userPhone" placeholder="Phone Number">
+
+        <input type="date" id="pickupDate">
+        <input type="text" id="pickupLocation" placeholder="Pickup Location">
+
+        <textarea id="tripDetails" placeholder="Trip details..."></textarea>
 
         <button id="sendBooking">Send via WhatsApp</button>
     </div>
