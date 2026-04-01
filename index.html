@@ -839,15 +839,28 @@
 
         <h2 id="carTitle">Book Car</h2>
 
-        <input type="text" id="userName" placeholder="Your Name">
-        <input type="tel" id="userPhone" placeholder="Phone Number">
+<input type="text" id="userName" placeholder="Your Name">
+<input type="tel" id="userPhone" placeholder="Phone Number">
 
-        <input type="date" id="pickupDate">
-        <input type="text" id="pickupLocation" placeholder="Pickup Location">
+<!-- RENT TYPE -->
+<select id="rentalType">
+    <option value="">Select Rental Type</option>
+    <option value="Self Drive">Self Drive</option>
+    <option value="With Driver">With Driver</option>
+</select>
 
-        <textarea id="tripDetails" placeholder="Trip details..."></textarea>
+<!-- RENTAL PERIOD -->
+<label>Start Date:</label>
+<input type="date" id="startDate">
 
-        <button id="sendBooking">Send via WhatsApp</button>
+<label>End Date:</label>
+<input type="date" id="endDate">
+
+<input type="text" id="pickupLocation" placeholder="Pickup Location">
+
+<textarea id="tripDetails" placeholder="Trip details..."></textarea>
+
+<button id="sendBooking">Send via WhatsApp</button>
     </div>
 
 </div>
