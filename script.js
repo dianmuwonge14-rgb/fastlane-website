@@ -13,13 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    search.addEventListener("keyup", () => {
-        const value = search.value.toLowerCase();
-        faqs.forEach(item => {
-            const text = item.innerText.toLowerCase();
-            item.style.display = text.includes(value) ? "block" : "none";
+    if (search) {
+        search.addEventListener("keyup", () => {
+            const value = search.value.toLowerCase();
+            faqs.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = text.includes(value) ? "block" : "none";
+            });
         });
-    });
+    }
 
     // ===== SCROLL ANIMATION =====
     const animatedItems = document.querySelectorAll(
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animatedItems.forEach(el => observer.observe(el));
 
-    // ===== BRAND FILTER + ACTIVE =====
+    // ===== BRAND FILTER =====
     const brandCards = document.querySelectorAll(".brand-card");
 
     brandCards.forEach(card => {
@@ -55,34 +57,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ===== SHOW ALL =====
-    document.getElementById("showAllBtn").addEventListener("click", () => {
-        document.querySelectorAll(".car-card").forEach(car => {
-            car.style.display = "block";
+    const showAllBtn = document.getElementById("showAllBtn");
+    if (showAllBtn) {
+        showAllBtn.addEventListener("click", () => {
+            document.querySelectorAll(".car-card").forEach(car => {
+                car.style.display = "block";
+            });
+            brandCards.forEach(b => b.classList.remove("active"));
         });
-        brandCards.forEach(b => b.classList.remove("active"));
-    });
+    }
 
     // ===== PRICE FILTER =====
-    document.getElementById("priceFilter").addEventListener("change", e => {
-        const value = e.target.value;
+    const priceFilter = document.getElementById("priceFilter");
+    if (priceFilter) {
+        priceFilter.addEventListener("change", e => {
+            const value = e.target.value;
 
-        document.querySelectorAll(".car-card").forEach(car => {
-            const price = parseInt(car.innerText.replace(/[^0-9]/g, ""));
+            document.querySelectorAll(".car-card").forEach(car => {
+                const price = parseInt(car.innerText.replace(/[^0-9]/g, ""));
 
-            if (
-                value === "low" && price < 250000 ||
-                value === "mid" && price >= 250000 && price <= 500000 ||
-                value === "high" && price > 500000 ||
-                value === "all"
-            ) {
-                car.style.display = "block";
-            } else {
-                car.style.display = "none";
-            }
+                if (
+                    value === "low" && price < 250000 ||
+                    value === "mid" && price >= 250000 && price <= 500000 ||
+                    value === "high" && price > 500000 ||
+                    value === "all"
+                ) {
+                    car.style.display = "block";
+                } else {
+                    car.style.display = "none";
+                }
+            });
         });
-    });
+    }
 
-    // ===== SMART BOOKING POPUP =====
+    // ===== BOOKING POPUP =====
     const popup = document.getElementById("bookingPopup");
     const closePopup = document.getElementById("closePopup");
     const carTitle = document.getElementById("carTitle");
@@ -96,68 +104,71 @@ document.addEventListener("DOMContentLoaded", () => {
             selectedCar = card.querySelector("h3").innerText;
 
             carTitle.innerText = "Book " + selectedCar;
-
             popup.style.display = "flex";
         });
     });
 
-    closePopup.onclick = () => popup.style.display = "none";
+    if (closePopup) {
+        closePopup.onclick = () => popup.style.display = "none";
+    }
 
     // ===== VALIDATED BOOKING =====
-    document.getElementById("sendBooking").addEventListener("click", () => {
+    const sendBooking = document.getElementById("sendBooking");
 
-        const name = document.getElementById("userName");
-        const phone = document.getElementById("userPhone");
-        const type = document.getElementById("rentalType");
-        const start = document.getElementById("startDate");
-        const end = document.getElementById("endDate");
-        const location = document.getElementById("pickupLocation");
+    if (sendBooking) {
+        sendBooking.addEventListener("click", () => {
 
-        // RESET ERRORS
-        [name, phone, type, start, end, location].forEach(input => {
-            input.classList.remove("input-error");
-        });
+            const name = document.getElementById("userName");
+            const phone = document.getElementById("userPhone");
+            const type = document.getElementById("rentalType");
+            const start = document.getElementById("startDate");
+            const end = document.getElementById("endDate");
+            const location = document.getElementById("pickupLocation");
 
-        let valid = true;
+            [name, phone, type, start, end, location].forEach(input => {
+                input.classList.remove("input-error");
+            });
 
-        if (name.value.trim() === "") {
-            name.classList.add("input-error");
-            valid = false;
-        }
+            let valid = true;
 
-        if (phone.value.trim() === "") {
-            phone.classList.add("input-error");
-            valid = false;
-        }
+            if (name.value.trim() === "") {
+                name.classList.add("input-error");
+                valid = false;
+            }
 
-        if (type.value === "") {
-            type.classList.add("input-error");
-            valid = false;
-        }
+            if (phone.value.trim() === "") {
+                phone.classList.add("input-error");
+                valid = false;
+            }
 
-        if (start.value === "") {
-            start.classList.add("input-error");
-            valid = false;
-        }
+            if (type.value === "") {
+                type.classList.add("input-error");
+                valid = false;
+            }
 
-        if (end.value === "") {
-            end.classList.add("input-error");
-            valid = false;
-        }
+            if (start.value === "") {
+                start.classList.add("input-error");
+                valid = false;
+            }
 
-        if (location.value.trim() === "") {
-            location.classList.add("input-error");
-            valid = false;
-        }
+            if (end.value === "") {
+                end.classList.add("input-error");
+                valid = false;
+            }
 
-        if (!valid) {
-            alert("Please fill in all required fields.");
-            return;
-        }
+            if (location.value.trim() === "") {
+                location.classList.add("input-error");
+                valid = false;
+            }
 
-        const details = document.getElementById("tripDetails").value;
+            if (!valid) {
+                alert("Please fill in all required fields.");
+                return;
+            }
 
-        const message = `🚗 Booking Request
+            const details = document.getElementById("tripDetails").value;
+
+            const message = `🚗 Booking Request
 Car: ${selectedCar}
 Name: ${name.value}
 Phone: ${phone.value}
@@ -167,11 +178,24 @@ End Date: ${end.value}
 Pickup Location: ${location.value}
 Details: ${details}`;
 
-        const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
-        window.open(url, "_blank");
-    });
+            const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        });
+    }
 
-    // ===== ADVANCED SLIDER =====
+    // ===== FILE UPLOAD NAME DISPLAY =====
+    const fileInput = document.getElementById("carImage");
+    const fileNameText = document.getElementById("fileName");
+
+    if (fileInput && fileNameText) {
+        fileInput.addEventListener("change", () => {
+            fileNameText.textContent = fileInput.files[0]
+                ? fileInput.files[0].name
+                : "No file chosen";
+        });
+    }
+
+    // ===== SLIDER =====
     document.querySelectorAll(".car-slider").forEach(slider => {
 
         const slides = slider.querySelector(".slides");
