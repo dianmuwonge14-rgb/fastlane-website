@@ -10,211 +10,898 @@
 
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== PREMIUM FAQ (KEEP YOUR DESIGN) ===== */
+        .faq-section {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            padding: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-question i {
+            transition: 0.3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.4s ease;
+            color: #ccc;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            margin-top: 10px;
+        }
+
+        .faq-item.active i {
+            transform: rotate(180deg);
+        }
+    </style>
+
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="header">
+    <!-- ===== HEADER (FIXED SPACING) ===== -->
+    <header class="header">
 
-    <h2 class="logo">FASTLANE</h2>
+        <h2 class="logo">FASTLANE</h2>
 
-    <nav class="nav">
-        <a href="#">Cars</a>
-        <a href="#">Brands</a>
-        <a href="#">Additional services</a>
-        <a href="#">Mobile App</a>
-        <a href="#">Club</a>
-        <a href="#">Blog</a>
-        <a href="#">Rent terms</a>
-        <a href="#">FAQ</a>
-        <a href="#">About us</a>
-        <a href="#">Contacts</a>
-    </nav>
+        <nav class="nav">
+            <a href="#">Cars</a>
+            <a href="#">Brands</a>
+            <a href="#">Additional services</a>
+            <a href="#">Mobile App</a>
+            <a href="#">Club</a>
+            <a href="#">Blog</a>
+            <a href="#">Rent terms</a>
+            <a href="#">FAQ</a>
+            <a href="#">About us</a>
+            <a href="#">Contacts</a>
+        </nav>
 
-    <div class="header-right">
+        <div class="header-right">
 
-        <div class="contacts">
-            <a href="tel:+256775607625">
-                <i class="fas fa-phone"></i> +256 775 607 625
-            </a>
-            <a href="tel:+256745185914">
-                <i class="fas fa-phone"></i> +256 745 185 914
-            </a>
-        </div>
-
-        <div class="socials">
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/256775607625"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-
-    </div>
-
-</header>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-    <h1>Rent a Car in Uganda</h1>
-</section>
-
-<!-- ===== AUTH ===== -->
-<section class="auth-section">
-
-    <h2>Join Fastlane Marketplace</h2>
-
-    <div class="auth-box">
-        <input type="email" id="email" placeholder="Enter your email">
-        <input type="password" id="password" placeholder="Enter your password">
-
-        <button id="signupBtn">Create Account</button>
-        <button id="loginBtn">Login</button>
-    </div>
-
-</section>
-
-<!-- ===== ADD CAR ===== -->
-<section class="add-car">
-
-    <h2>List Your Car</h2>
-
-    <input type="text" id="carName" placeholder="Car Name">
-    <input type="number" id="carPrice" placeholder="Price per day">
-
-    <label class="file-upload">
-        Choose Car Image
-        <input type="file" id="carImage">
-    </label>
-
-    <span id="fileName">No file chosen</span>
-
-    <button id="addCarBtn">Upload Car</button>
-
-</section>
-
-<!-- ===== BRANDS ===== -->
-<section class="brands">
-    <h2>Our Brands</h2>
-
-    <div class="brands-container">
-        <div class="brands-track">
-
-            <div class="brand-card" data-brand="toyota"><img src="images/toyota.png"></div>
-            <div class="brand-card" data-brand="bmw"><img src="images/bmw.png"></div>
-            <div class="brand-card" data-brand="mercedes"><img src="images/mercedes.png"></div>
-            <div class="brand-card" data-brand="nissan"><img src="images/nissan.png"></div>
-            <div class="brand-card" data-brand="subaru"><img src="images/subaru.png"></div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ===== CARS ===== -->
-<section class="cars">
-
-    <h2>Available Cars</h2>
-
-    <div class="car-controls">
-        <button id="showAllBtn">Show All Cars</button>
-
-        <select id="priceFilter">
-            <option value="all">All Prices</option>
-            <option value="low">Below 250k</option>
-            <option value="mid">250k - 500k</option>
-            <option value="high">Above 500k</option>
-        </select>
-    </div>
-
-    <!-- ✅ FIXED -->
-    <div class="cars-container">
-
-        <!-- EXISTING CAR -->
-        <div class="car-card">
-            <img src="images/car1.jpg">
-            <h3>Toyota Prado</h3>
-            <p>UGX 400,000 / day</p>
-            <button class="book-btn">Book Now</button>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="faq-section">
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-search">
-        <input type="text" id="faqSearch" placeholder="Search questions...">
-    </div>
-
-    <div class="faq-container">
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How can I book a vehicle?</span>
-                <i class="fas fa-chevron-down"></i>
+            <div class="contacts">
+                <a href="tel:+256775607625">
+                    <i class="fas fa-phone"></i> +256 775 607 625
+                </a>
+                <a href="tel:+256745185914">
+                    <i class="fas fa-phone"></i> +256 745 185 914
+                </a>
             </div>
-            <div class="faq-answer">
-                You can book via phone or WhatsApp.
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/256775607625"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
+
         </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Do you offer airport pickup?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Yes, we offer airport pickup services.
-            </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <h1>Rent a Car in Uganda</h1>
+    </section>
+    <section class="auth-section">
+
+        <h2>Join Fastlane Marketplace</h2>
+
+        <div class="auth-box">
+            <input type="email" id="email" placeholder="Enter your email">
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <button id="signupBtn">Create Account</button>
+            <button id="loginBtn">Login</button>
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- ADD CAR SECTION -->
+    <section class="add-car">
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-    <p>© 2026 Fastlane Transport</p>
-</footer>
+        <h2>List Your Car</h2>
 
-<!-- ===== BOOKING POPUP ===== -->
-<div class="booking-popup" id="bookingPopup">
+        <input type="text" id="carName" placeholder="Car Name">
+        <input type="number" id="carPrice" placeholder="Price per day">
 
-    <div class="popup-content">
-        <span id="closePopup">×</span>
+        <label class="file-upload">
+            Choose Car Image
+            <input type="file" id="carImage">
+        </label>
+        <span id="fileName">No file chosen</span>
 
-        <h2 id="carTitle">Book Car</h2>
+        <button id="addCarBtn">Upload Car</button>
 
-        <input type="text" id="userName" placeholder="Your Name">
-        <input type="tel" id="userPhone" placeholder="Phone Number">
+    </section>
+    <!-- ===== BRANDS ===== -->
+    <section class="brands">
 
-        <select id="rentalType">
-            <option value="">Select Rental Type</option>
-            <option value="Self Drive">Self Drive</option>
-            <option value="With Driver">With Driver</option>
-        </select>
+        <h2>Our Brands</h2>
 
-        <input type="date" id="startDate">
-        <input type="date" id="endDate">
+        <div class="brands-container">
 
-        <input type="text" id="pickupLocation" placeholder="Pickup Location">
+            <!-- REPLACE src WITH YOUR LOGO FILES -->
+            <div class="brands-slider">
 
-        <textarea id="tripDetails" placeholder="Trip details..."></textarea>
+                <div class="brands-track">
 
-        <button id="sendBooking">Send via WhatsApp</button>
-    </div>
+                    <!-- ORIGINAL SET -->
+                    <div class="brand-card" data-brand="audi">
+                        <img src="images/audi.png" alt="Audi">
+                    </div>
 
-</div>
+                    <div class="brand-card" data-brand="bmw">
+                        <img src="images/bmw.png" alt="BMW">
+                    </div>
 
-<!-- ===== SCRIPTS (FIXED) ===== -->
-<script src="script.js"></script>
+                    <div class="brand-card" data-brand="cadillac">
+                        <img src="images/cadillac.png" alt="Cadillac">
+                    </div>
+
+                    <div class="brand-card" data-brand="ford">
+                        <img src="images/ford.png" alt="Ford">
+                    </div>
+
+                    <div class="brand-card" data-brand="honda">
+                        <img src="images/honda.png" alt="Honda">
+                    </div>
+
+                    <div class="brand-card" data-brand="hyundai">
+                        <img src="images/hyundai.png" alt="Hyundai">
+                    </div>
+
+                    <div class="brand-card" data-brand="jetour">
+                        <img src="images/jetour.png" alt="Jetour">
+                    </div>
+
+                    <div class="brand-card" data-brand="landrover">
+                        <img src="images/land-rover.png" alt="Land Rover">
+                    </div>
+
+                    <div class="brand-card" data-brand="mazda">
+                        <img src="images/mazda.png" alt="Mazda">
+                    </div>
+
+                    <div class="brand-card" data-brand="mercedes">
+                        <img src="images/mercedes.png" alt="Mercedes">
+                    </div>
+
+                    <div class="brand-card" data-brand="mitsubishi">
+                        <img src="images/mitsubishi.png" alt="Mitsubishi">
+                    </div>
+
+                    <div class="brand-card" data-brand="nissan">
+                        <img src="images/nissan.png" alt="Nissan">
+                    </div>
+
+                    <div class="brand-card" data-brand="range">
+                        <img src="images/range-rover.png" alt="Range Rover">
+                    </div>
+
+                    <div class="brand-card" data-brand="subaru">
+                        <img src="images/subaru.png" alt="Subaru">
+                    </div>
+
+                    <div class="brand-card" data-brand="toyota">
+                        <img src="images/toyota.png" alt="Toyota">
+                    </div>
+
+                    <div class="brand-card" data-brand="volkswagen">
+                        <img src="images/volkswagen.png" alt="Volkswagen">
+                    </div>
+
+
+                    <!-- DUPLICATE SET (FOR SMOOTH LOOP) -->
+                    <div class="brand-card" data-brand="audi"><img src="images/audi.png"></div>
+                    <div class="brand-card" data-brand="bmw"><img src="images/bmw.png"></div>
+                    <div class="brand-card" data-brand="cadillac"><img src="images/cadillac.png"></div>
+                    <div class="brand-card" data-brand="ford"><img src="images/ford.png"></div>
+                    <div class="brand-card" data-brand="honda"><img src="images/honda.png"></div>
+                    <div class="brand-card" data-brand="hyundai"><img src="images/hyundai.png"></div>
+                    <div class="brand-card" data-brand="jetour"><img src="images/jetour.png"></div>
+                    <div class="brand-card" data-brand="landrover"><img src="images/land-rover.png"></div>
+                    <div class="brand-card" data-brand="mazda"><img src="images/mazda.png"></div>
+                    <div class="brand-card" data-brand="mercedes"><img src="images/mercedes.png"></div>
+                    <div class="brand-card" data-brand="mitsubishi"><img src="images/mitsubishi.png"></div>
+                    <div class="brand-card" data-brand="nissan"><img src="images/nissan.png"></div>
+                    <div class="brand-card" data-brand="range"><img src="images/range-rover.png"></div>
+                    <div class="brand-card" data-brand="subaru"><img src="images/subaru.png"></div>
+                    <div class="brand-card" data-brand="toyota"><img src="images/toyota.png"></div>
+                    <div class="brand-card" data-brand="volkswagen"><img src="images/volkswagen.png"></div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- ===== CAR SECTION ===== -->
+        <section class="cars">
+
+            <h2>Available Cars</h2>
+            <div class="car-controls">
+
+                <button id="showAllBtn">Show All Cars</button>
+
+                <select id="priceFilter">
+                    <option value="all">All Prices</option>
+                    <option value="low">Below 250k</option>
+                    <option value="mid">250k - 500k</option>
+                    <option value="high">Above 500k</option>
+                </select>
+
+            </div>
+            <div class="car-container">
+
+                <!-- ALL CAR CARDS WITH ADVANCED SLIDER -->
+
+                <!-- TOYOTA -->
+                <div class="car-card" data-brand="toyota">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car1.jpg">
+                            <img src="images/car1b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Toyota Prado</h3>
+                    <p>Comfortable SUV perfect for long trips, safaris, and executive travel across Uganda.</p>
+                    <span>UGX 400,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- BMW -->
+                <div class="car-card" data-brand="bmw">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car2.jpg">
+                            <img src="images/car2b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>BMW X5</h3>
+                    <p>Luxury SUV offering top-tier comfort, style, and performance for premium clients.</p>
+                    <span>UGX 1,000,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- MERCEDES -->
+                <div class="car-card" data-brand="mercedes">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car3.jpg">
+                            <img src="images/car3b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Mercedes Benz</h3>
+                    <p>Executive class vehicle ideal for business trips, airport pickups, and VIP transport.</p>
+                    <span>UGX 600,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- NISSAN -->
+                <div class="car-card" data-brand="nissan">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car4.jpg">
+                            <img src="images/car4b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Nissan Patrol</h3>
+                    <p>Strong and reliable SUV for rough terrain, safaris, and countryside travel.</p>
+                    <span>UGX 375,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- SUBARU -->
+                <div class="car-card" data-brand="subaru">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car5.jpg">
+                            <img src="images/car5b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Subaru XV</h3>
+                    <p>Affordable and efficient compact crossover SUV for everyday city movement and short trips.</p>
+                    <span>UGX 250,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- RANGE ROVER -->
+                <div class="car-card" data-brand="range">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car6.jpg">
+                            <img src="images/car6b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Range Rover</h3>
+                    <p>High-end luxury SUV for VIP transport, weddings, and premium experiences.</p>
+                    <span>UGX 1,500,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- AUDI -->
+                <div class="car-card" data-brand="audi">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car7.jpg">
+                            <img src="images/car7b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Audi Q7</h3>
+                    <p>Premium luxury SUV designed for executive travel.</p>
+                    <span>UGX 940,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- CADILLAC -->
+                <div class="car-card" data-brand="cadillac">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car8.jpg">
+                            <img src="images/car8b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Cadillac Escalade</h3>
+                    <p>High-end luxury SUV for VIP clients.</p>
+                    <span>UGX 1,100,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- FORD -->
+                <div class="car-card" data-brand="ford">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car9.jpg">
+                            <img src="images/car9b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Ford Everest</h3>
+                    <p>Powerful SUV for family and long trips.</p>
+                    <span>UGX 560,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- HONDA -->
+                <div class="car-card" data-brand="honda">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car10.jpg">
+                            <img src="images/car10b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Honda CR-V</h3>
+                    <p>Reliable and fuel-efficient SUV.</p>
+                    <span>UGX 300,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- HYUNDAI -->
+                <div class="car-card" data-brand="hyundai">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car11.jpg">
+                            <img src="images/car11b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Hyundai Santa Fe</h3>
+                    <p>Comfortable and modern SUV.</p>
+                    <span>UGX 330,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- JETOUR -->
+                <div class="car-card" data-brand="jetour">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car12.jpg">
+                            <img src="images/car12b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Jetour X70</h3>
+                    <p>Spacious SUV for group travel.</p>
+                    <span>UGX 600,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- MAZDA -->
+                <div class="car-card" data-brand="mazda">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car13.jpg">
+                            <img src="images/car13b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Mazda CX-5</h3>
+                    <p>Elegant and efficient SUV.</p>
+                    <span>UGX 300,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- VOLKSWAGEN -->
+                <div class="car-card" data-brand="volkswagen">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car14.jpg">
+                            <img src="images/car14b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Volkswagen Tiguan</h3>
+                    <p>Comfortable German-engineered SUV.</p>
+                    <span>UGX 370,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <!-- MITSUBISHI -->
+                <div class="car-card" data-brand="mitsubishi">
+                    <div class="car-slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="slides">
+                            <img src="images/car15.jpg">
+                            <img src="images/car15b.jpg">
+                        </div>
+                        <button class="next">&#10095;</button>
+                        <div class="dots"></div>
+                    </div>
+                    <h3>Mitsubishi Pajero</h3>
+                    <p>Durable SUV for off-road adventures.</p>
+                    <span>UGX 560,000 / day</span>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+
+        </section>
+        <!-- ===== WHY CHOOSE US ===== -->
+        <section class="why-us">
+
+            <h2>Why Choose Fastlane Transport</h2>
+
+            <div class="why-container">
+
+                <div class="why-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Wide Range of Vehicles</h3>
+                    <p>
+                        We provide a diverse fleet ranging from affordable everyday cars to luxury and executive
+                        vehicles.
+                        Whether you need a simple city ride, a business-class experience, or a safari-ready SUV,
+                        Fastlane Transport ensures you always have the perfect vehicle for your journey.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Professional Drivers</h3>
+                    <p>
+                        Our drivers are highly trained, licensed, and experienced in both city and long-distance travel.
+                        They prioritize your safety, comfort, and punctuality while offering a smooth and stress-free
+                        travel experience across Uganda.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Availability</h3>
+                    <p>
+                        We operate around the clock to meet your transportation needs at any time of the day or night.
+                        Whether it's an early morning airport pickup or a late-night drop-off, you can always rely on
+                        us.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety & Insurance</h3>
+                    <p>
+                        All our vehicles are fully insured and regularly maintained to ensure maximum safety.
+                        We follow strict safety standards, giving you peace of mind throughout your trip.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials">
+
+            <h2>What Our Clients Say</h2>
+
+            <div class="testimonial-container">
+
+                <div class="testimonial-card">
+                    <p>
+                        "Fastlane Transport exceeded my expectations. The car was clean, the driver was extremely
+                        professional,
+                        and everything was perfectly on time. I used their service for airport pickup and city movement,
+                        and I felt safe and comfortable throughout. I highly recommend them to anyone visiting Uganda."
+                    </p>
+                    <h4>— Sarah K., Tourist</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>
+                        "We have been using Fastlane for our company transportation needs, and their reliability is
+                        unmatched.
+                        Their team is responsive, their vehicles are always in excellent condition, and their drivers
+                        understand professionalism. It has made our operations much smoother."
+                    </p>
+                    <h4>— James M., Business Client</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>
+                        "I booked a car last minute and was impressed by how quickly they responded.
+                        The process was simple, the pricing was fair, and the service was top-notch.
+                        I will definitely use Fastlane again for my future trips."
+                    </p>
+                    <h4>— Brian T., Local Client</h4>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ===== FAQ ===== -->
+        <section class="faq-section">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-search">
+                <input type="text" id="faqSearch" placeholder="Search questions...">
+            </div>
+
+            <div class="faq-container">
+
+                <!-- ALL YOUR QUESTIONS (NOT REMOVED) -->
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I book a vehicle with Fastlane Transport?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You can book via phone or WhatsApp. Our team will guide you through vehicle options, pricing,
+                        and
+                        confirmation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide airport pickup services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer reliable airport pickups with proper coordination based on your flight schedule.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are your drivers professional?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        All drivers are trained, licensed, and experienced to ensure safety and comfort.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What documents are required?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        A valid driving license and identification (ID or passport) are required.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can tourists rent cars?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, international clients are welcome and may use international driving permits.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer chauffeur services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, professional drivers are available.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are vehicles insured?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, all vehicles are fully insured.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer long-term rentals?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, monthly and long-term options are available.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide corporate services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, for companies and organizations.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is roadside assistance available?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, 24/7 support is available.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I cancel my booking?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, based on cancellation policy.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you operate nationwide?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, across Uganda.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are child seats available?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, on request.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I book last minute?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, depending on availability.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer tour packages?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, customized tours available.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is fuel included?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No, fuel is not included.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you allow cross-border travel?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, with prior arrangement.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Mobile money, bank transfer, and cash.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide luxury cars?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, luxury and VIP vehicles are available.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are your services 24/7?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we operate all day.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-container">
+
+                <div>
+                    <h2>FASTLANE</h2>
+                    <p>© 2026 Fastlane Transport</p>
+                </div>
+
+                <div>
+                    <h2>About</h2>
+                    <a href="#">Contacts</a>
+                    <a href="#">Blog</a>
+                    <a href="#">FAQ</a>
+                </div>
+
+                <div>
+                    <h2>Services</h2>
+                    <a href="#">Airport pickup</a>
+                    <a href="#">Private hire</a>
+                    <a href="#">Tour trips</a>
+                </div>
+
+                <div>
+                    <h2>Contacts</h2>
+                    <p>+256 775 607 625</p>
+                    <p>+256 745 185 914</p>
+                </div>
+
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <!-- ===== SMART BOOKING POPUP ===== -->
+        <div class="booking-popup" id="bookingPopup">
+
+            <div class="popup-content">
+                <span id="closePopup">&times;</span>
+
+                <h2 id="carTitle">Book Car</h2>
+
+                <input type="text" id="userName" placeholder="Your Name">
+                <input type="tel" id="userPhone" placeholder="Phone Number">
+
+                <!-- RENT TYPE -->
+                <select id="rentalType">
+                    <option value="">Select Rental Type</option>
+                    <option value="Self Drive">Self Drive</option>
+                    <option value="With Driver">With Driver</option>
+                </select>
+
+                <!-- RENTAL PERIOD -->
+                <label>Start Date:</label>
+                <input type="date" id="startDate">
+
+                <label>End Date:</label>
+                <input type="date" id="endDate">
+
+                <input type="text" id="pickupLocation" placeholder="Pickup Location">
+
+                <textarea id="tripDetails" placeholder="Trip details..."></textarea>
+
+                <button id="sendBooking">Send via WhatsApp</button>
+            </div>
+
+        </div>
+</body>
+
+</html>
 <script type="module" src="firebase.js"></script>
 <script type="module" src="auth.js"></script>
-
-</body>
-</html>
