@@ -14,7 +14,6 @@ const firebaseConfig = {
 
 // INIT
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
-// MAKE GLOBAL
-window.db = db;
+// ✅ EXPORT THIS
+export const db = getFirestore(app);
