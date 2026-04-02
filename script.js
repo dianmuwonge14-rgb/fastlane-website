@@ -165,12 +165,13 @@ Details: ${details}`;
     const addCarBtn = document.getElementById("addCarBtn");
 
     if (addCarBtn) {
-        addCarBtn.addEventListener("click", async () => {
+        addCarBtn.addEventListener("click", () => {
 
-            const name = document.getElementById("carName").value;
-            const price = document.getElementById("carPrice").value;
-            const image = document.getElementById("carImage").files[0];
+    console.log("Button clicked"); // 👈 ADD THIS
 
+    const name = document.getElementById("carName").value;
+    const price = document.getElementById("carPrice").value;
+    const image = document.getElementById("carImage").files[0];
             if (!name || !price || !image) {
                 alert("Fill all fields");
                 return;
@@ -191,7 +192,6 @@ Details: ${details}`;
 
             // ADD TO UI
             const carContainer = document.querySelector(".car-container");
-
             const carCard = document.createElement("div");
             carCard.classList.add("car-card");
 
