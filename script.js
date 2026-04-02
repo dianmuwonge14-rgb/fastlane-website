@@ -261,6 +261,11 @@ if (addCarBtn) {
         // CREATE CAR CARD
         const carContainer = document.querySelector(".cars-container");
 
+if (!carContainer) {
+    alert("Cars container not found!");
+    return;
+}
+
         const carCard = document.createElement("div");
         carCard.classList.add("car-card");
 
@@ -272,7 +277,19 @@ if (addCarBtn) {
             <p>UGX ${price} / day</p>
             <button class="book-btn">Book Now</button>
         `;
+carCard.innerHTML = `
+    <img src="${imgURL}" alt="${name}">
+    <h3>${name}</h3>
+    <p>UGX ${price} / day</p>
+    <button class="book-btn">Book Now</button>
+`;
 
+// ✅ ADD THIS HERE
+carCard.querySelector(".book-btn").addEventListener("click", () => {
+    selectedCar = name;
+    carTitle.innerText = "Book " + name;
+    popup.style.display = "flex";
+});
         carContainer.appendChild(carCard);
 
         // RESET FORM
