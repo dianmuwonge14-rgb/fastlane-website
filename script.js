@@ -1,13 +1,12 @@
 import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 import { db } from "./firebase.js";
+
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ===== FAQ =====
     const faqs = document.querySelectorAll(".faq-item");
     const search = document.getElementById("faqSearch");
 
-    // rest of your code continues...
-
-    // ===== FAQ =====
     faqs.forEach(item => {
         item.addEventListener("click", () => {
             faqs.forEach(f => {
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     brandCards.forEach(card => {
         card.addEventListener("click", () => {
-
             brandCards.forEach(b => b.classList.remove("active"));
             card.classList.add("active");
 
@@ -101,93 +99,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let selectedCar = "";
 
-    document.querySelectorAll(".book-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-
-            const card = btn.closest(".car-card");
-            selectedCar = card.querySelector("h3").innerText;
-
-            carTitle.innerText = "Book " + selectedCar;
+    function attachBooking(button, name) {
+        button.addEventListener("click", () => {
+            selectedCar = name;
+            carTitle.innerText = "Book " + name;
             popup.style.display = "flex";
         });
+    }
+
+    document.querySelectorAll(".book-btn").forEach(btn => {
+        const name = btn.closest(".car-card").querySelector("h3").innerText;
+        attachBooking(btn, name);
     });
 
     if (closePopup) {
         closePopup.onclick = () => popup.style.display = "none";
     }
 
-    // ===== VALIDATED BOOKING =====
+    // ===== WHATSAPP BOOKING =====
     const sendBooking = document.getElementById("sendBooking");
 
     if (sendBooking) {
         sendBooking.addEventListener("click", () => {
 
-            const name = document.getElementById("userName");
-            const phone = document.getElementById("userPhone");
-            const type = document.getElementById("rentalType");
-            const start = document.getElementById("startDate");
-            const end = document.getElementById("endDate");
-            const location = document.getElementById("pickupLocation");
+            const name = document.getElementById("userName").value;
+            const phone = document.getElementById("userPhone").value;
+            const type = document.getElementById("rentalType").value;
+            const start = document.getElementById("startDate").value;
+            const end = document.getElementById("endDate").value;
+            const location = document.getElementById("pickupLocation").value;
+            const details = document.getElementById("tripDetails").value;
 
-            [name, phone, type, start, end, location].forEach(input => {
-                input.classList.remove("input-error");
-            });
-
-            let valid = true;
-
-            if (name.value.trim() === "") {
-                name.classList.add("input-error");
-                valid = false;
-            }
-
-            if (phone.value.trim() === "") {
-                phone.classList.add("input-error");
-                valid = false;
-            }
-
-            if (type.value === "") {
-                type.classList.add("input-error");
-                valid = false;
-            }
-
-            if (start.value === "") {
-                start.classList.add("input-error");
-                valid = false;
-            }
-
-            if (end.value === "") {
-                end.classList.add("input-error");
-                valid = false;
-            }
-
-            if (location.value.trim() === "") {
-                location.classList.add("input-error");
-                valid = false;
-            }
-
-            if (!valid) {
-                alert("Please fill in all required fields.");
+            if (!name || !phone || !type || !start || !end || !location) {
+                alert("Please fill all fields");
                 return;
             }
 
-            const details = document.getElementById("tripDetails").value;
-
             const message = `🚗 Booking Request
 Car: ${selectedCar}
-Name: ${name.value}
-Phone: ${phone.value}
-Rental Type: ${type.value}
-Start Date: ${start.value}
-End Date: ${end.value}
-Pickup Location: ${location.value}
+Name: ${name}
+Phone: ${phone}
+Rental Type: ${type}
+Start Date: ${start}
+End Date: ${end}
+Pickup Location: ${location}
 Details: ${details}`;
 
-            const url = `https://wa.me/256775607625?text=${encodeURIComponent(message)}`;
-            window.open(url, "_blank");
+            window.open(`https://wa.me/256775607625?text=${encodeURIComponent(message)}`, "_blank");
         });
     }
 
-    // ===== FILE UPLOAD NAME DISPLAY =====
+    // ===== FILE NAME DISPLAY =====
     const fileInput = document.getElementById("carImage");
     const fileNameText = document.getElementById("fileName");
 
@@ -199,110 +161,60 @@ Details: ${details}`;
         });
     }
 
-    // ===== SLIDER =====
-    document.querySelectorAll(".car-slider").forEach(slider => {
+    // ===== ADD CAR + FIREBASE =====
+    const addCarBtn = document.getElementById("addCarBtn");
 
-        const slides = slider.querySelector(".slides");
-        const images = slides.querySelectorAll("img");
-        const prev = slider.querySelector(".prev");
-        const next = slider.querySelector(".next");
-        const dotsContainer = slider.querySelector(".dots");
+    if (addCarBtn) {
+        addCarBtn.addEventListener("click", async () => {
 
-        let index = 0;
+            const name = document.getElementById("carName").value;
+            const price = document.getElementById("carPrice").value;
+            const image = document.getElementById("carImage").files[0];
 
-        images.forEach((_, i) => {
-            const dot = document.createElement("span");
-            if (i === 0) dot.classList.add("active");
+            if (!name || !price || !image) {
+                alert("Fill all fields");
+                return;
+            }
 
-            dot.addEventListener("click", () => {
-                index = i;
-                updateSlider();
-            });
+            const imgURL = URL.createObjectURL(image);
 
-            dotsContainer.appendChild(dot);
+            // SAVE TO FIREBASE
+            try {
+                await addDoc(collection(db, "cars"), {
+                    name: name,
+                    price: price,
+                    image: imgURL
+                });
+            } catch (e) {
+                console.error(e);
+            }
+
+            // ADD TO UI
+            const carContainer = document.querySelector(".car-container");
+
+            const carCard = document.createElement("div");
+            carCard.classList.add("car-card");
+
+            carCard.innerHTML = `
+                <img src="${imgURL}" alt="${name}">
+                <h3>${name}</h3>
+                <p>UGX ${price} / day</p>
+                <button class="book-btn">Book Now</button>
+            `;
+
+            const btn = carCard.querySelector(".book-btn");
+            attachBooking(btn, name);
+
+            carContainer.appendChild(carCard);
+
+            // RESET
+            document.getElementById("carName").value = "";
+            document.getElementById("carPrice").value = "";
+            document.getElementById("carImage").value = "";
+            document.getElementById("fileName").textContent = "No file chosen";
+
+            alert("Car uploaded 🚗");
         });
+    }
 
-        const dots = dotsContainer.querySelectorAll("span");
-
-        function updateSlider() {
-            slides.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach(d => d.classList.remove("active"));
-            dots[index].classList.add("active");
-        }
-
-        next.addEventListener("click", () => {
-            index = (index + 1) % images.length;
-            updateSlider();
-        });
-
-        prev.addEventListener("click", () => {
-            index = (index - 1 + images.length) % images.length;
-            updateSlider();
-        });
-
-        setInterval(() => {
-            index = (index + 1) % images.length;
-            updateSlider();
-        }, 3000);
-
-    });
-// ===== ADD CAR FUNCTION =====
-const addCarBtn = document.getElementById("addCarBtn");
-
-if (addCarBtn) {
-    addCarBtn.addEventListener("click", () => {
-
-        const name = document.getElementById("carName").value;
-        const price = document.getElementById("carPrice").value;
-        const image = document.getElementById("carImage").files[0];
-
-        // VALIDATION
-        if (!name || !price || !image) {
-            alert("Please fill all fields and select an image");
-            return;
-        }
-
-        // CREATE CAR CARD
-        const carContainer = document.querySelector(".cars-container");
-
-if (!carContainer) {
-    alert("Cars container not found!");
-    return;
-}
-
-        const carCard = document.createElement("div");
-        carCard.classList.add("car-card");
-
-        const imgURL = URL.createObjectURL(image);
-
-        carCard.innerHTML = `
-            <img src="${imgURL}" alt="${name}">
-            <h3>${name}</h3>
-            <p>UGX ${price} / day</p>
-            <button class="book-btn">Book Now</button>
-        `;
-carCard.innerHTML = `
-    <img src="${imgURL}" alt="${name}">
-    <h3>${name}</h3>
-    <p>UGX ${price} / day</p>
-    <button class="book-btn">Book Now</button>
-`;
-
-// ✅ ADD THIS HERE
-carCard.querySelector(".book-btn").addEventListener("click", () => {
-    selectedCar = name;
-    carTitle.innerText = "Book " + name;
-    popup.style.display = "flex";
-});
-        carContainer.appendChild(carCard);
-
-        // RESET FORM
-        document.getElementById("carName").value = "";
-        document.getElementById("carPrice").value = "";
-        document.getElementById("carImage").value = "";
-        document.getElementById("fileName").textContent = "No file chosen";
-
-        alert("Car uploaded successfully 🚗");
-    });
-}
 });
