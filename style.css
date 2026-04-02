@@ -756,3 +756,22 @@ body {
 .auth-box button:hover {
     background: #333;
 }
+/* ===== ADD CAR SECTION ===== */
+.add-car {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.add-car input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+}
+
+.add-car button {
+    padding: 12px 20px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+}
