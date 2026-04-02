@@ -242,5 +242,46 @@ Details: ${details}`;
         }, 3000);
 
     });
+// ===== ADD CAR FUNCTION =====
+const addCarBtn = document.getElementById("addCarBtn");
 
+if (addCarBtn) {
+    addCarBtn.addEventListener("click", () => {
+
+        const name = document.getElementById("carName").value;
+        const price = document.getElementById("carPrice").value;
+        const image = document.getElementById("carImage").files[0];
+
+        // VALIDATION
+        if (!name || !price || !image) {
+            alert("Please fill all fields and select an image");
+            return;
+        }
+
+        // CREATE CAR CARD
+        const carContainer = document.querySelector(".cars-container");
+
+        const carCard = document.createElement("div");
+        carCard.classList.add("car-card");
+
+        const imgURL = URL.createObjectURL(image);
+
+        carCard.innerHTML = `
+            <img src="${imgURL}" alt="${name}">
+            <h3>${name}</h3>
+            <p>UGX ${price} / day</p>
+            <button class="book-btn">Book Now</button>
+        `;
+
+        carContainer.appendChild(carCard);
+
+        // RESET FORM
+        document.getElementById("carName").value = "";
+        document.getElementById("carPrice").value = "";
+        document.getElementById("carImage").value = "";
+        document.getElementById("fileName").textContent = "No file chosen";
+
+        alert("Car uploaded successfully 🚗");
+    });
+}
 });
