@@ -1,7 +1,11 @@
+import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import { db } from "./firebase.js";
 document.addEventListener("DOMContentLoaded", () => {
 
     const faqs = document.querySelectorAll(".faq-item");
     const search = document.getElementById("faqSearch");
+
+    // rest of your code continues...
 
     // ===== FAQ =====
     faqs.forEach(item => {
