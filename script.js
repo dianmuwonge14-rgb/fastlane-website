@@ -200,5 +200,39 @@ if (addCarBtn) {
 }
 });
 }
+// ===== FETCH CARS FROM FIREBASE =====
+const carsContainer = document.getElementById("carsContainer");
 
+async function loadCars() {
+    if (!carsContainer) return;
+
+    carsContainer.innerHTML = "<p>Loading cars...</p>";
+
+    try {
+        const querySnapshot = await getDocs(collection(db, "cars"));
+
+        carsContainer.innerHTML = "";
+
+        querySnapshot.forEach((doc) => {
+            const car = doc.data();
+
+            const carHTML = `
+    <div class="car-card">
+        <img src="${car.image}" alt="${car.name}">
+        <h3>${car.name}</h3>
+        <p>UGX ${car.price} / day</p>
+        <button class="book-btn">Book Now</button>
+    </div>
+`;
+
+            carsContainer.innerHTML += carHTML;
+        });
+
+    } catch (error) {
+        console.error(error);
+        carsContainer.innerHTML = "<p>Failed to load cars</p>";
+    }
+}
+
+loadCars();
 });
