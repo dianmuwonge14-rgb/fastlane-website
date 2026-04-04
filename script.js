@@ -161,4 +161,44 @@ Details: ${details}`;
         });
     }
 
+   // ===== ADD CAR TO FIREBASE =====
+const addCarBtn = document.getElementById("addCarBtn");
+
+if (addCarBtn) {
     addCarBtn.addEventListener("click", async () => {
+
+        const name = document.getElementById("carName").value;
+        const price = document.getElementById("carPrice").value;
+        const imageInput = document.getElementById("carImage");
+
+        const image = imageInput.files[0]
+            ? URL.createObjectURL(imageInput.files[0])
+            : "";
+
+        if (!name || !price) {
+            alert("Please fill all fields");
+            return;
+        }
+
+        try {
+            await addDoc(collection(db, "cars"), {
+                name: name,
+                price: price,
+                image: image,
+                createdAt: new Date()
+            });
+
+            alert("Car uploaded successfully ✅");
+
+            document.getElementById("carName").value = "";
+            document.getElementById("carPrice").value = "";
+            document.getElementById("carImage").value = "";
+
+        } catch (error) {
+    console.error(error);
+    alert("Upload failed ❌");
+}
+});
+}
+
+});
